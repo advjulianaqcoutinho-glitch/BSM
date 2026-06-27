@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Abra qualquer balancete e, em até 10 minutos, saiba por onde começar, o que olhar e como explicar os números com segurança. Aula prática, método, checklist e garantia. Para contadoras operacionais." />
+<title>Balancete Sem Medo · Analise qualquer balancete em 10 minutos</title>
+<link rel="icon" type="image/png" href="favicon.png" />
+
+<!-- Fontes -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"></noscript>
+
+<style>
+:root{
+  --navy:#0E2438;        /* azul escuro principal */
+  --navy-deep:#091A2A;   /* azul mais profundo */
+  --navy-soft:#13354F;   /* azul de cards escuros */
+  --blue:#2563EB;        /* azul de destaque/links */
+  --blue-soft:#EAF1FE;   /* azul clarinho de fundo */
+  --green:#16A34A;       /* verde de confiança */
+  --green-soft:#E7F6EC;  /* verde clarinho */
+  --green-deep:#0F7A37;
+  --ink:#10212F;         /* texto principal */
+  --gray:#5B6B7A;        /* texto secundário */
+  --gray-soft:#8595A3;
+  --line:#E3E9EF;        /* bordas */
+  --bg:#FFFFFF;
+  --bg-alt:#F5F8FB;      /* seções alternadas */
+  --white:#FFFFFF;
+  --radius:16px;
+  --radius-lg:24px;
+  --radius-sm:10px;
+  --maxw:1120px;
+  --pad:clamp(20px,4vw,48px);
+  --shadow-sm:0 1px 2px rgba(14,36,56,.05),0 8px 24px -12px rgba(14,36,56,.15);
+  --shadow:0 2px 4px rgba(14,36,56,.06),0 24px 48px -20px rgba(14,36,56,.22);
+  --shadow-cta:0 12px 28px -10px rgba(22,163,74,.5);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body,html{margin:0;padding:0;background:var(--bg);color:var(--ink);
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer}
+.container{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad)}
+.section{padding:clamp(56px,8vw,104px) 0}
+.section--alt{background:var(--bg-alt)}
+.section--navy{background:var(--navy);color:#DCE6F0}
+
+/* Tipografia */
+h1,h2,h3,h4{margin:0;letter-spacing:-.02em;color:var(--ink)}
+.eyebrow{display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--blue);margin-bottom:16px}
+.eyebrow--green{color:var(--green-deep)}
+.eyebrow--light{color:#7FB0F2}
+.h1{font-size:clamp(30px,5vw,52px);font-weight:800;line-height:1.08}
+.h2{font-size:clamp(26px,4vw,42px);font-weight:800;line-height:1.12;margin-bottom:18px}
+.h3{font-size:clamp(19px,2.4vw,24px);font-weight:700;line-height:1.25}
+.lead{font-size:clamp(17px,2vw,20px);color:var(--gray);line-height:1.6}
+.text-center{text-align:center}
+.muted{color:var(--gray)}
+.hl{color:var(--blue);font-weight:700}
+.hl-green{color:var(--green-deep);font-weight:700}
+.section--navy h2,.section--navy h3{color:#fff}
+.section--navy .muted{color:#9FB3C6}
+
+/* CTA */
+.cta{display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  background:linear-gradient(180deg,#1EBE57,var(--green));color:#fff;
+  font-weight:800;font-size:clamp(15px,1.6vw,17px);letter-spacing:-.01em;
+  padding:18px 30px;border:none;border-radius:14px;box-shadow:var(--shadow-cta);
+  transition:transform .15s ease,box-shadow .2s ease,filter .2s;text-align:center;line-height:1.25}
+.cta:hover{transform:translateY(-2px);filter:brightness(1.04);box-shadow:0 18px 36px -10px rgba(22,163,74,.6)}
+.cta:active{transform:translateY(0)}
+.cta svg{flex-shrink:0}
+.cta--lg{padding:21px 38px;font-size:clamp(16px,1.8vw,19px)}
+.cta--ghost{background:transparent;color:var(--blue);box-shadow:none;border:1.5px solid var(--blue);font-weight:700}
+.cta--ghost:hover{background:var(--blue-soft);transform:translateY(-1px);box-shadow:none}
+.cta--white{background:#fff;color:var(--navy)}
+.cta-note{font-size:13px;color:var(--gray-soft);margin-top:14px;line-height:1.5}
+.section--navy .cta-note{color:#8DA2B6}
+.cta-wrap{display:flex;flex-direction:column;align-items:center}
+@media(max-width:560px){.cta{width:100%}}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.9);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;height:62px}
+.nav__brand{font-weight:800;font-size:19px;letter-spacing:-.02em;color:var(--navy);display:flex;align-items:center;gap:9px}
+.nav__brand .dot{width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px var(--green-soft)}
+.nav__cta{background:linear-gradient(180deg,#1EBE57,var(--green));color:#fff;font-weight:700;
+  font-size:13.5px;padding:10px 18px;border-radius:999px;box-shadow:var(--shadow-cta);transition:.18s;white-space:nowrap}
+.nav__cta:hover{transform:translateY(-1px);filter:brightness(1.04)}
+@media(max-width:560px){.nav__cta{font-size:12px;padding:9px 14px}}
+
+/* HERO */
+.hero{position:relative;background:
+   radial-gradient(ellipse at 75% 0%,rgba(37,99,235,.07),transparent 55%),
+   linear-gradient(180deg,#fff,var(--bg-alt));overflow:hidden}
+.hero__grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,5vw,64px);
+  align-items:center;padding:clamp(44px,6vw,80px) 0 clamp(56px,7vw,90px)}
+.hero__badge{display:inline-flex;align-items:center;gap:8px;background:var(--green-soft);
+  color:var(--green-deep);font-size:12.5px;font-weight:700;letter-spacing:.02em;
+  padding:7px 14px;border-radius:999px;margin-bottom:22px}
+.hero__badge .pulse{width:7px;height:7px;border-radius:50%;background:var(--green);
+  box-shadow:0 0 0 3px rgba(22,163,74,.25)}
+.hero h1{margin-bottom:20px}
+.hero__sub{font-size:clamp(16px,1.9vw,19px);color:var(--gray);max-width:560px;margin:0 0 28px}
+.hero__bullets{list-style:none;padding:0;margin:0 0 30px;display:grid;gap:12px}
+.hero__bullets li{display:flex;gap:12px;align-items:flex-start;font-size:15.5px;color:var(--ink)}
+.hero__bullets .ck{flex-shrink:0;width:24px;height:24px;border-radius:50%;background:var(--green-soft);
+  color:var(--green-deep);display:grid;place-items:center;margin-top:1px}
+.hero__bullets b{font-weight:700}
+.hero__visual{position:relative}
+.hero__card{background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);
+  box-shadow:var(--shadow);overflow:hidden}
+.hero__card-top{background:var(--navy);color:#fff;padding:16px 20px;display:flex;align-items:center;gap:12px}
+.hero__card-top .dots{display:flex;gap:6px}
+.hero__card-top .dots span{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.35)}
+.hero__card-top .dots span:first-child{background:#FF6B5E}
+.hero__card-top .dots span:nth-child(2){background:#FFC400}
+.hero__card-top .dots span:nth-child(3){background:#28C76F}
+.hero__card-top .ttl{font-size:12.5px;font-weight:600;letter-spacing:.04em;color:#B9CBDD}
+.hero__card-body{padding:8px 0}
+.balrow{display:grid;grid-template-columns:1.6fr .8fr .8fr;gap:8px;padding:11px 20px;font-size:13px;align-items:center}
+.balrow+.balrow{border-top:1px dashed var(--line)}
+.balrow .acc{color:var(--ink);font-weight:500}
+.balrow .num{text-align:right;font-variant-numeric:tabular-nums;color:var(--gray)}
+.balrow--head{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--gray-soft);font-weight:700;background:var(--bg-alt)}
+.balrow--flag{background:linear-gradient(90deg,rgba(255,196,0,.16),rgba(255,196,0,.04));position:relative}
+.balrow--flag .acc{font-weight:700;color:var(--ink)}
+.balrow--flag::after{content:"⚠";position:absolute;right:14px;color:#E0A800}
+.balrow--ok .num{color:var(--green-deep);font-weight:700}
+.hero__tag{position:absolute;right:-10px;bottom:-16px;background:#fff;border:1px solid var(--line);
+  box-shadow:var(--shadow-sm);border-radius:14px;padding:14px 18px;display:flex;align-items:center;gap:12px;max-width:240px}
+.hero__tag .ic{width:38px;height:38px;border-radius:10px;background:var(--green-soft);color:var(--green-deep);display:grid;place-items:center;flex-shrink:0}
+.hero__tag .t1{font-weight:800;font-size:15px;line-height:1.1}
+.hero__tag .t2{font-size:12px;color:var(--gray)}
+@media(max-width:900px){
+  .hero__grid{grid-template-columns:1fr;gap:40px}
+  .hero__visual{order:-1;max-width:480px;margin:0 auto;width:100%}
+  .hero__tag{position:static;margin:16px auto 0;max-width:none;justify-content:center}
+}
+
+/* PARA QUEM É */
+.head-block{max-width:760px;margin:0 auto 48px}
+.head-block.text-center{text-align:center}
+.checklist{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:920px;margin:0 auto}
+.checkitem{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--line);
+  border-radius:var(--radius);padding:20px 22px;box-shadow:var(--shadow-sm)}
+.checkitem .ck{flex-shrink:0;width:26px;height:26px;border-radius:50%;background:var(--green-soft);
+  color:var(--green-deep);display:grid;place-items:center;margin-top:1px}
+.checkitem p{margin:0;font-size:15px;color:var(--ink)}
+@media(max-width:720px){.checklist{grid-template-columns:1fr}}
+
+/* DOR */
+.pain-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;max-width:900px;margin:36px auto 0}
+.pain-card{background:var(--navy-soft);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);
+  padding:24px 26px;position:relative;color:#E4ECF4}
+.pain-card::before{content:"\201C";position:absolute;top:6px;left:18px;font-size:54px;color:rgba(127,176,242,.35);
+  font-family:Georgia,serif;line-height:1}
+.pain-card p{margin:0;padding-top:14px;font-size:16.5px;font-style:italic;line-height:1.5}
+.pain-punch{max-width:680px;margin:42px auto 0;text-align:center;font-size:clamp(20px,2.6vw,28px);
+  font-weight:700;line-height:1.35;color:#fff}
+.pain-punch span{color:#7FB0F2}
+@media(max-width:720px){.pain-cards{grid-template-columns:1fr}}
+
+/* PROMESSA — antes/depois */
+.ba-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:24px;align-items:stretch;max-width:980px;margin:0 auto}
+.ba-col{border-radius:var(--radius-lg);padding:30px 28px}
+.ba-col--before{background:#fff;border:1px solid var(--line)}
+.ba-col--after{background:linear-gradient(180deg,#10324C,var(--navy));color:#fff;box-shadow:var(--shadow)}
+.ba-col h3{display:flex;align-items:center;gap:10px;margin-bottom:20px;font-size:18px}
+.ba-col--after h3{color:#fff}
+.ba-col ul{list-style:none;padding:0;margin:0;display:grid;gap:14px}
+.ba-col li{display:flex;gap:11px;align-items:flex-start;font-size:15px;line-height:1.45}
+.ba-col--before li .ic{color:var(--gray-soft);flex-shrink:0;margin-top:2px}
+.ba-col--after li{color:#D6E3EF}
+.ba-col--after li .ic{color:#3BDB7E;flex-shrink:0;margin-top:2px}
+.ba-arrow{display:grid;place-items:center;color:var(--blue)}
+.ba-arrow svg{width:40px;height:40px}
+.synth{max-width:740px;margin:48px auto 0;text-align:center;background:var(--blue-soft);
+  border:1px solid #CFE0FB;border-radius:var(--radius);padding:28px 32px;
+  font-size:clamp(18px,2.3vw,24px);font-weight:700;line-height:1.35;color:var(--navy)}
+@media(max-width:820px){
+  .ba-grid{grid-template-columns:1fr}
+  .ba-arrow{transform:rotate(90deg);padding:4px 0}
+}
+
+/* STACK */
+.stack{display:grid;gap:20px;max-width:880px;margin:0 auto}
+.deliv{display:grid;grid-template-columns:auto 1fr;gap:22px;background:#fff;border:1px solid var(--line);
+  border-radius:var(--radius-lg);padding:28px 30px;box-shadow:var(--shadow-sm)}
+.deliv__num{width:48px;height:48px;border-radius:14px;background:var(--navy);color:#fff;
+  font-weight:800;font-size:19px;display:grid;place-items:center;flex-shrink:0}
+.deliv__tag{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--blue);margin-bottom:6px}
+.deliv h3{margin-bottom:12px}
+.deliv p{margin:0 0 6px;color:var(--gray);font-size:15px}
+.deliv ul{margin:10px 0 12px;padding-left:0;list-style:none;display:grid;gap:8px}
+.deliv ul li{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:var(--ink)}
+.deliv ul li .ck{flex-shrink:0;width:20px;height:20px;border-radius:50%;background:var(--green-soft);
+  color:var(--green-deep);display:grid;place-items:center;margin-top:1px;font-size:11px}
+.deliv__val{font-size:13.5px;font-style:italic;color:var(--green-deep);margin-top:6px;
+  background:var(--green-soft);border-radius:8px;padding:8px 12px;display:inline-block}
+.bonus-head{text-align:center;margin:54px auto 28px;max-width:640px}
+.bonus-head .eyebrow{margin-bottom:10px}
+.deliv--bonus{border-style:dashed;border-color:#CBE3D3;background:linear-gradient(180deg,#fff,var(--green-soft))}
+.deliv--bonus .deliv__num{background:var(--green)}
+.deliv--bonus .deliv__tag{color:var(--green-deep)}
+.value-box{max-width:780px;margin:46px auto 0;text-align:center;background:var(--navy);color:#fff;
+  border-radius:var(--radius-lg);padding:38px 36px}
+.value-box p{margin:0 auto 8px;max-width:620px;color:#C7D6E4;font-size:16px}
+.value-box .big{font-size:clamp(22px,3vw,30px);font-weight:800;color:#fff;margin-top:6px}
+.value-box .big span{color:#3BDB7E}
+@media(max-width:600px){.deliv{grid-template-columns:1fr}.deliv__num{width:42px;height:42px}}
+
+/* COMPARATIVO */
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:920px;margin:0 auto}
+.vs-col{border-radius:var(--radius-lg);padding:30px 28px}
+.vs-col--old{background:#fff;border:1px solid var(--line)}
+.vs-col--new{background:linear-gradient(180deg,#E7F6EC,#fff);border:1px solid #BFE6CC}
+.vs-col h3{margin-bottom:20px;font-size:18px;display:flex;align-items:center;gap:10px}
+.vs-col ul{list-style:none;padding:0;margin:0;display:grid;gap:13px}
+.vs-col li{display:flex;gap:11px;align-items:flex-start;font-size:14.5px;line-height:1.45}
+.vs-col--old li .ic{color:#C24B4B;flex-shrink:0;margin-top:2px}
+.vs-col--new li .ic{color:var(--green-deep);flex-shrink:0;margin-top:2px}
+.vs-punch{max-width:680px;margin:46px auto 0;text-align:center;font-size:clamp(20px,2.8vw,30px);
+  font-weight:800;line-height:1.3;color:var(--navy)}
+.vs-punch span{color:var(--blue)}
+@media(max-width:720px){.vs{grid-template-columns:1fr}}
+
+/* GARANTIA */
+.guarantee{max-width:860px;margin:0 auto;background:#fff;border:1px solid #BFE6CC;border-radius:var(--radius-lg);
+  box-shadow:var(--shadow);overflow:hidden}
+.guarantee__top{background:linear-gradient(135deg,var(--green-deep),var(--green));color:#fff;
+  padding:34px 36px;display:flex;align-items:center;gap:22px}
+.guarantee__shield{width:64px;height:64px;flex-shrink:0;background:rgba(255,255,255,.15);border-radius:18px;
+  display:grid;place-items:center}
+.guarantee__top h3{color:#fff;font-size:clamp(20px,2.6vw,26px)}
+.guarantee__top p{margin:4px 0 0;color:#D6F2E0;font-size:14.5px}
+.guarantee__body{padding:32px 36px}
+.guarantee__body>p{margin:0 0 18px;color:var(--gray)}
+.guarantee__body ul{list-style:none;padding:0;margin:0 0 18px;display:grid;gap:11px}
+.guarantee__body li{display:flex;gap:11px;align-items:flex-start;font-size:15.5px}
+.guarantee__body li .ck{flex-shrink:0;width:24px;height:24px;border-radius:50%;background:var(--green-soft);
+  color:var(--green-deep);display:grid;place-items:center;margin-top:1px}
+.guarantee__final{font-weight:700;color:var(--ink);font-size:16.5px;line-height:1.45}
+@media(max-width:600px){.guarantee__top{flex-direction:column;text-align:center;gap:14px}}
+
+/* PREÇO */
+.price-wrap{max-width:780px;margin:0 auto}
+.price-q{list-style:none;padding:0;margin:0 0 34px;display:grid;gap:12px;max-width:620px}
+.price-q li{display:flex;gap:12px;align-items:flex-start;font-size:16px;color:#D6E3EF}
+.price-q li .ic{color:#7FB0F2;flex-shrink:0;margin-top:3px}
+.price-card{background:#fff;border-radius:var(--radius-lg);box-shadow:var(--shadow);overflow:hidden;text-align:center}
+.price-card__ribbon{background:var(--green);color:#fff;font-weight:700;font-size:13px;letter-spacing:.06em;
+  text-transform:uppercase;padding:9px}
+.price-card__body{padding:38px 32px}
+.price-card .name{font-size:16px;font-weight:600;color:var(--gray);margin-bottom:6px}
+.price-card .amount{font-size:clamp(48px,9vw,72px);font-weight:900;color:var(--navy);line-height:1;letter-spacing:-.03em}
+.price-card .amount sup{font-size:.4em;font-weight:700;vertical-align:super;margin-right:2px}
+.price-card .install{font-size:16px;color:var(--gray);margin-top:8px}
+.price-card .sub{font-size:14px;color:var(--gray-soft);margin:16px auto 26px;max-width:440px}
+.price-trust{display:flex;flex-wrap:wrap;justify-content:center;gap:18px;margin-top:22px}
+.price-trust span{display:inline-flex;align-items:center;gap:7px;font-size:13px;color:var(--gray)}
+.price-trust .ic{color:var(--green-deep)}
+
+/* FAQ */
+.faq{max-width:760px;margin:0 auto;display:grid;gap:14px}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+  box-shadow:var(--shadow-sm)}
+.faq summary{list-style:none;cursor:pointer;padding:20px 24px;font-weight:700;font-size:16px;color:var(--ink);
+  display:flex;align-items:center;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .chev{flex-shrink:0;width:26px;height:26px;border-radius:50%;background:var(--blue-soft);
+  color:var(--blue);display:grid;place-items:center;transition:transform .2s}
+.faq details[open] summary .chev{transform:rotate(180deg)}
+.faq .faq__a{padding:0 24px 22px;color:var(--gray);font-size:15.5px;line-height:1.6}
+.faq__cta{text-align:center;margin-top:40px}
+
+/* FOOTER */
+.footer{background:var(--navy-deep);color:#8DA2B6;padding:44px 0;text-align:center;font-size:13.5px}
+.footer .brand{font-weight:800;color:#fff;font-size:18px;margin-bottom:10px}
+.footer a{color:#B9CBDD;text-decoration:underline}
+.footer p{margin:6px 0;max-width:680px;margin-left:auto;margin-right:auto}
+
+/* Sticky mobile CTA */
+.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(255,255,255,.96);
+  backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:12px var(--pad);
+  transform:translateY(120%);transition:transform .3s ease;box-shadow:0 -6px 24px -12px rgba(14,36,56,.3)}
+.sticky-cta.show{transform:translateY(0)}
+.sticky-cta .cta{width:100%}
+@media(min-width:760px){.sticky-cta{display:none}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="container nav__inner">
+    <div class="nav__brand"><span class="dot"></span> Balancete <span style="font-weight:500">Sem Medo</span></div>
+    <a href="#checkout" class="nav__cta js-cta" data-cta="nav">Garantir por R$47</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="container hero__grid">
+    <div class="hero__left">
+      <span class="hero__badge"><span class="pulse"></span> Produto digital para contadoras operacionais</span>
+      <h1 class="h1">Abra qualquer balancete e, em até <span class="hl">10 minutos</span>, saiba exatamente por onde começar, o que olhar e como explicar os números com segurança.</h1>
+      <p class="hero__sub">Para contadoras que já fecham dezenas de empresas por mês, mas ainda sentem que só <em>conferem</em> números — em vez de realmente <strong>analisar</strong>.</p>
+      <ul class="hero__bullets">
+        <li><span class="ck">✓</span><span>Você já sabe montar balancete.</span></li>
+        <li><span class="ck">✓</span><span>Seu problema não é contabilidade. <b>É interpretação.</b></span></li>
+        <li><span class="ck">✓</span><span>Você não precisa de mais teoria. Você precisa <b>ver uma análise real acontecendo</b>.</span></li>
+        <li><span class="ck">✓</span><span>Uma aula prática com <b>método, checklist e garantia</b>.</span></li>
+      </ul>
+      <div class="cta-wrap" style="align-items:flex-start">
+        <a href="#checkout" class="cta cta--lg js-cta" data-cta="hero">Quero acessar o Balancete Sem Medo por R$47</a>
+        <p class="cta-note">Produto digital 100% online &nbsp;|&nbsp; Acesso imediato &nbsp;|&nbsp; Pensado para contadoras operacionais</p>
+      </div>
+    </div>
+
+    <div class="hero__visual">
+      <div class="hero__card">
+        <div class="hero__card-top">
+          <span class="dots"><span></span><span></span><span></span></span>
+          <span class="ttl">Balancete · Empresa exemplo · 06/2026</span>
+        </div>
+        <div class="hero__card-body">
+          <div class="balrow balrow--head"><span>Conta</span><span class="num">Anterior</span><span class="num">Atual</span></div>
+          <div class="balrow"><span class="acc">Caixa e equivalentes</span><span class="num">18.400</span><span class="num">12.100</span></div>
+          <div class="balrow balrow--flag"><span class="acc">Clientes a receber</span><span class="num">42.700</span><span class="num">71.300</span></div>
+          <div class="balrow"><span class="acc">Estoques</span><span class="num">33.500</span><span class="num">35.900</span></div>
+          <div class="balrow balrow--flag"><span class="acc">Fornecedores</span><span class="num">21.100</span><span class="num">39.800</span></div>
+          <div class="balrow balrow--ok"><span class="acc">Receita líquida</span><span class="num">88.200</span><span class="num">94.500</span></div>
+        </div>
+      </div>
+      <div class="hero__tag">
+        <span class="ic">⏱</span>
+        <div>
+          <div class="t1">10 min / balancete</div>
+          <div class="t2">com método e checklist</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUEM É -->
+<section class="section section--alt" id="para-quem">
+  <div class="container">
+    <div class="head-block text-center">
+      <span class="eyebrow">Para quem é</span>
+      <h2 class="h2">Para quem é o Balancete Sem Medo?</h2>
+      <p class="lead">Este produto foi criado para um tipo muito específico de profissional: a contadora que já faz fechamento todo mês, mas ainda sente que sua análise do balancete é <strong>superficial</strong>.</p>
+      <p class="lead" style="margin-top:18px;font-weight:600;color:var(--ink)">Se você se reconhece em 2 ou mais frases abaixo, este conteúdo é para você:</p>
+    </div>
+    <div class="checklist">
+      <div class="checkitem"><span class="ck">✓</span><p>Você trabalha em escritório de contabilidade (pequeno ou médio) ou como contadora interna.</p></div>
+      <div class="checkitem"><span class="ck">✓</span><p>Fecha de <b>10 a 50 empresas por mês</b>.</p></div>
+      <div class="checkitem"><span class="ck">✓</span><p>Já estudou contabilidade, fez faculdade, talvez pós, cursos do CRC — mas na hora de interpretar um balancete real ainda sente insegurança.</p></div>
+      <div class="checkitem"><span class="ck">✓</span><p>Sente que gasta mais tempo do que deveria tentando entender o que os números estão dizendo.</p></div>
+      <div class="checkitem"><span class="ck">✓</span><p>Tem medo de deixar passar alguma informação importante.</p></div>
+      <div class="checkitem"><span class="ck">✓</span><p>Gostaria de entregar mais valor para o cliente, mas não sabe exatamente por onde começar a análise.</p></div>
+    </div>
+    <div class="cta-wrap" style="margin-top:42px">
+      <a href="#checkout" class="cta js-cta" data-cta="para-quem">Sim, eu me reconheço. Quero acessar o Balancete Sem Medo.</a>
+    </div>
+  </div>
+</section>
+
+<!-- DOR REAL -->
+<section class="section section--navy" id="dor">
+  <div class="container">
+    <div class="head-block text-center">
+      <span class="eyebrow eyebrow--light">A dor real</span>
+      <h2 class="h2">A dor que quase nenhuma contadora admite… mas muitas sentem.</h2>
+      <p class="lead muted">Na rotina, você recebe dezenas de balancetes. Confere saldos, cumpre obrigações, entrega relatórios. Mas quando olha para os números, sente que está apenas <em>checando</em> — não analisando de verdade.</p>
+    </div>
+    <div class="pain-cards">
+      <div class="pain-card"><p>Será que eu estou olhando para o lugar certo?</p></div>
+      <div class="pain-card"><p>Será que deixei passar alguma coisa importante?</p></div>
+      <div class="pain-card"><p>Será que outro contador enxergaria algo que eu não vi?</p></div>
+      <div class="pain-card"><p>Faço balancetes todo mês, mas no fundo sinto que ainda não sei transformar aqueles números em uma análise que gere valor.</p></div>
+    </div>
+    <p class="pain-punch">A dor não é falta de conhecimento técnico.<br>É falta de <span>clareza, método e confiança</span> para interpretar.</p>
+    <div class="cta-wrap" style="margin-top:40px">
+      <a href="#checkout" class="cta js-cta" data-cta="dor">Quero transformar minha forma de analisar balancetes.</a>
+    </div>
+  </div>
+</section>
+
+<!-- PROMESSA -->
+<section class="section" id="promessa">
+  <div class="container">
+    <div class="head-block text-center">
+      <span class="eyebrow">A promessa</span>
+      <h2 class="h2">O que o Balancete Sem Medo faz por você?</h2>
+      <p class="lead">Não é mais um curso teórico de análise de balanço. É uma <strong>experiência prática</strong> que muda a forma como você olha para qualquer balancete.</p>
+    </div>
+    <div class="ba-grid">
+      <div class="ba-col ba-col--before">
+        <h3>😕 Antes</h3>
+        <ul>
+          <li><span class="ic">✕</span>Você analisa no automático.</li>
+          <li><span class="ic">✕</span>Perde 20–40 minutos em cada balancete, com idas e vindas.</li>
+          <li><span class="ic">✕</span>Termina pensando “acho que está certo…”.</li>
+          <li><span class="ic">✕</span>Evita se posicionar com segurança em conversas com chefe ou cliente.</li>
+        </ul>
+      </div>
+      <div class="ba-arrow" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </div>
+      <div class="ba-col ba-col--after">
+        <h3>✅ Depois</h3>
+        <ul>
+          <li><span class="ic">✓</span>Você abre qualquer balancete e sabe exatamente por onde começar.</li>
+          <li><span class="ic">✓</span>Tem um roteiro simples em mente.</li>
+          <li><span class="ic">✓</span>Faz em 10–15 minutos a análise que antes levava quase uma hora.</li>
+          <li><span class="ic">✓</span>Explica o cenário do cliente com clareza e segurança.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="synth">Em 1 hora de aula prática, você aprende um método que muda seu próximo fechamento.</p>
+    <div class="cta-wrap" style="margin-top:34px">
+      <a href="#checkout" class="cta js-cta" data-cta="promessa">Quero aprender esse método agora por R$47.</a>
+    </div>
+  </div>
+</section>
+
+<!-- STACK -->
+<section class="section section--alt" id="stack">
+  <div class="container">
+    <div class="head-block text-center">
+      <span class="eyebrow">O que você recebe</span>
+      <h2 class="h2">O que você recebe ao entrar no Balancete Sem Medo</h2>
+      <p class="lead">Não é só conteúdo. É um conjunto de ferramentas para mudar sua rotina de fechamento.</p>
+    </div>
+
+    <div class="stack">
+      <div class="deliv">
+        <div class="deliv__num">1</div>
+        <div>
+          <span class="deliv__tag">Entregável principal</span>
+          <h3 class="h3">Aula-Mestra Prática “Balancete Ao Vivo”</h3>
+          <p>Uma aula prática onde você acompanha uma análise real de balancete, do início ao fim. A expert abre um balancete de verdade e mostra:</p>
+          <ul>
+            <li><span class="ck">✓</span>onde começar;</li>
+            <li><span class="ck">✓</span>quais contas observar primeiro;</li>
+            <li><span class="ck">✓</span>como identificar padrões e riscos;</li>
+            <li><span class="ck">✓</span>como interpretar o cenário financeiro da empresa;</li>
+            <li><span class="ck">✓</span>como traduzir isso em linguagem simples para o cliente ou para o chefe.</li>
+          </ul>
+          <p>É como se você estivesse sentada ao lado, vendo exatamente como pensar durante a análise.</p>
+          <span class="deliv__val">Conteúdo que você não encontra em cursos tradicionais. Aqui você vê a análise acontecendo.</span>
+        </div>
+      </div>
+
+      <div class="deliv">
+        <div class="deliv__num">2</div>
+        <div>
+          <span class="deliv__tag">Guia PDF</span>
+          <h3 class="h3">“Mapa Mental do Balancete”</h3>
+          <p>Um guia em PDF que resume o método em um passo a passo visual. Para usar como “cola” na rotina:</p>
+          <ul>
+            <li><span class="ck">✓</span>Passo 1: onde começar;</li>
+            <li><span class="ck">✓</span>Passo 2: o que sempre merece atenção;</li>
+            <li><span class="ck">✓</span>Passo 3: como comparar com meses anteriores;</li>
+            <li><span class="ck">✓</span>Passo 4: como identificar alertas;</li>
+            <li><span class="ck">✓</span>Passo 5: como organizar a explicação para o cliente.</li>
+          </ul>
+          <p>É um mapa para você não se perder no meio dos números.</p>
+        </div>
+      </div>
+
+      <div class="deliv">
+        <div class="deliv__num">3</div>
+        <div>
+          <span class="deliv__tag">Checklist operacional</span>
+          <h3 class="h3">“Análise em 10 Minutos por Balancete”</h3>
+          <p>Um checklist para acompanhar qualquer análise, pensado para quem fecha dezenas de empresas:</p>
+          <ul>
+            <li><span class="ck">✓</span>evita que você esqueça pontos importantes;</li>
+            <li><span class="ck">✓</span>impede que você fique rodando em círculo;</li>
+            <li><span class="ck">✓</span>ajuda a saber quando a análise está “boa o suficiente” e quando precisa aprofundar.</li>
+          </ul>
+          <p>Leve, direto e prático.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="bonus-head">
+      <span class="eyebrow eyebrow--green">Bônus</span>
+      <h3 class="h3" style="font-size:clamp(20px,3vw,26px)">Bônus pensados para responder às suas principais objeções</h3>
+    </div>
+
+    <div class="stack">
+      <div class="deliv deliv--bonus">
+        <div class="deliv__num">★</div>
+        <div>
+          <span class="deliv__tag">Bônus 1</span>
+          <h3 class="h3">“Modo Fechamento Real”</h3>
+          <p>Mini conteúdo mostrando como aplicar o método na correria de fechamento, com muitas empresas:</p>
+          <ul>
+            <li><span class="ck">✓</span>o que analisar profundamente;</li>
+            <li><span class="ck">✓</span>o que só passar o olho;</li>
+            <li><span class="ck">✓</span>como não ser perfeccionista em cada cliente.</li>
+          </ul>
+          <p>Para você ver que funciona na prática, mesmo com 30–50 empresas.</p>
+        </div>
+      </div>
+
+      <div class="deliv deliv--bonus">
+        <div class="deliv__num">★</div>
+        <div>
+          <span class="deliv__tag">Bônus 2</span>
+          <h3 class="h3">“Checklist Anti-Análise Superficial”</h3>
+          <p>Uma lista de perguntas que você consegue responder com o balancete sem ser especialista em finanças, como:</p>
+          <ul>
+            <li><span class="ck">✓</span>“Esse cliente está saudável financeiramente?”</li>
+            <li><span class="ck">✓</span>“Onde está o principal problema deste mês?”</li>
+            <li><span class="ck">✓</span>“Essa despesa fugiu do padrão?”</li>
+          </ul>
+          <p>Serve para provar que sua análise vai além de “conferir número”.</p>
+        </div>
+      </div>
+
+      <div class="deliv deliv--bonus">
+        <div class="deliv__num">★</div>
+        <div>
+          <span class="deliv__tag">Bônus 3</span>
+          <h3 class="h3">“Guia de Adaptação por Tipo de Cliente”</h3>
+          <p>Um mini guia para você ajustar o olhar conforme o tipo de empresa:</p>
+          <ul>
+            <li><span class="ck">✓</span>prestadores de serviço;</li>
+            <li><span class="ck">✓</span>comércio;</li>
+            <li><span class="ck">✓</span>pequenas indústrias.</li>
+          </ul>
+          <p>Para que você se sinta segura de usar o método com qualquer carteira.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="value-box">
+      <p>Se você fosse contratar uma consultoria ou fazer múltiplos cursos para chegar neste nível de clareza, facilmente passaria de centenas de reais.</p>
+      <div class="big">Aqui, você tem tudo isso organizado em um único produto, por <span>R$47</span>.</div>
+    </div>
+
+    <div class="cta-wrap" style="margin-top:38px">
+      <a href="#checkout" class="cta cta--lg js-cta" data-cta="stack">Quero tudo isso por apenas R$47.</a>
+    </div>
+  </div>
+</section>
+
+<!-- DIFERENCIAL -->
+<section class="section" id="diferencial">
+  <div class="container">
+    <div class="head-block text-center">
+      <span class="eyebrow">Por que é diferente</span>
+      <h2 class="h2">Por que o Balancete Sem Medo é diferente de tudo que você já viu</h2>
+    </div>
+    <div class="vs">
+      <div class="vs-col vs-col--old">
+        <h3>O que você já tentou</h3>
+        <ul>
+          <li><span class="ic">✕</span><span><b>Faculdade:</b> muita teoria, pouca prática.</span></li>
+          <li><span class="ic">✕</span><span><b>Pós/MBA:</b> muitos conceitos, poucos casos reais.</span></li>
+          <li><span class="ic">✕</span><span><b>Cursos do CRC:</b> foco em normas e legislação, não em interpretação.</span></li>
+          <li><span class="ic">✕</span><span><b>Lives e vídeos:</b> dicas soltas, sem passo a passo.</span></li>
+          <li><span class="ic">✕</span><span><b>Material técnico:</b> pesado, distante da rotina.</span></li>
+        </ul>
+      </div>
+      <div class="vs-col vs-col--new">
+        <h3>O que você vai encontrar aqui</h3>
+        <ul>
+          <li><span class="ic">✓</span>Uma análise real, do início ao fim.</li>
+          <li><span class="ic">✓</span>Um raciocínio sendo narrado, passo a passo.</li>
+          <li><span class="ic">✓</span>Um método que cabe na correria do escritório.</li>
+          <li><span class="ic">✓</span>Uma linguagem simples, sem excesso de termos técnicos.</li>
+          <li><span class="ic">✓</span>Ferramentas para aplicar na próxima semana de fechamento.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="vs-punch">Você não precisa estudar mais.<br><span>Você precisa ver como analisar na prática.</span></p>
+    <div class="cta-wrap" style="margin-top:38px">
+      <a href="#checkout" class="cta js-cta" data-cta="diferencial">Quero ver essa análise na prática.</a>
+    </div>
+  </div>
+</section>
+
+<!-- GARANTIA -->
+<section class="section section--alt" id="garantia">
+  <div class="container">
+    <div class="head-block text-center">
+      <span class="eyebrow eyebrow--green">Garantia</span>
+      <h2 class="h2">Garantia Fechamento Sem Medo</h2>
+      <p class="lead">Você talvez esteja pensando: “E se for mais um curso que eu compro e não muda nada?”. Por isso, a decisão é simples.</p>
+    </div>
+    <div class="guarantee">
+      <div class="guarantee__top">
+        <div class="guarantee__shield">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+        </div>
+        <div>
+          <h3>7 dias de garantia incondicional</h3>
+          <p>Teste o método em um balancete real. Se não fizer sentido, você não paga nada.</p>
+        </div>
+      </div>
+      <div class="guarantee__body">
+        <p>Assista à aula e use o checklist em pelo menos <strong>1 balancete real</strong> do seu escritório. Se depois de aplicar o método você não sentir:</p>
+        <ul>
+          <li><span class="ck">✓</span>mais clareza na análise,</li>
+          <li><span class="ck">✓</span>mais agilidade,</li>
+          <li><span class="ck">✓</span>menos “acho que está certo” e mais “tenho certeza do que estou vendo”,</li>
+        </ul>
+        <p>basta enviar um e-mail em até <strong>7 dias</strong> e devolvemos <strong>100% do seu dinheiro</strong>. Sem perguntas, sem burocracia.</p>
+        <p class="guarantee__final">Ou você sai com um método que muda seu próximo fechamento, ou não paga nada por tentar.</p>
+      </div>
+    </div>
+    <div class="cta-wrap" style="margin-top:38px">
+      <a href="#checkout" class="cta js-cta" data-cta="garantia">Com essa garantia, faz sentido eu não testar?</a>
+    </div>
+  </div>
+</section>
+
+<!-- PREÇO / CHECKOUT -->
+<section class="section section--navy" id="checkout">
+  <div class="container price-wrap">
+    <div class="head-block text-center" style="margin-bottom:34px">
+      <span class="eyebrow eyebrow--light">Investimento</span>
+      <h2 class="h2">O quanto vale acabar com a sensação de que você só “confere números”?</h2>
+      <p class="lead muted">Pense no seu mês de fechamento:</p>
+    </div>
+    <ul class="price-q" style="margin-left:auto;margin-right:auto">
+      <li><span class="ic">→</span>Quantos balancetes você analisa?</li>
+      <li><span class="ic">→</span>Quantas horas a mais você gasta porque não tem um roteiro claro?</li>
+      <li><span class="ic">→</span>Quantas vezes você evita dar uma opinião por insegurança?</li>
+      <li><span class="ic">→</span>Quantas oportunidades de se posicionar como contadora que realmente entende os números você deixa passar?</li>
+    </ul>
+    <p class="text-center muted" style="margin:0 auto 30px;max-width:520px">Agora compare isso com o investimento único de <strong style="color:#fff">R$47</strong>.</p>
+
+    <div class="price-card">
+      <div class="price-card__ribbon">Acesso completo · pagamento único</div>
+      <div class="price-card__body">
+        <div class="name">Acesso completo ao Balancete Sem Medo</div>
+        <div class="amount"><sup>R$</sup>47</div>
+        <div class="install">à vista ou em até <strong>11x</strong> via plataforma de pagamento</div>
+        <p class="sub">Produto digital. Você recebe acesso imediato ao conteúdo e pode assistir quantas vezes quiser.</p>
+        <div class="cta-wrap">
+          <!-- TROQUE o href abaixo pelo seu link da Kiwify. O script de tracking injeta UTMs + external_id automaticamente em links pay.kiwify.com.br -->
+          <a href="#checkout" class="cta cta--lg js-cta" data-cta="checkout-final">Quero acessar o Balancete Sem Medo por R$47</a>
+        </div>
+        <div class="price-trust">
+          <span><span class="ic">✓</span> Acesso imediato</span>
+          <span><span class="ic">✓</span> Garantia de 7 dias</span>
+          <span><span class="ic">✓</span> Pagamento seguro</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="head-block text-center">
+      <span class="eyebrow">Dúvidas</span>
+      <h2 class="h2">Perguntas frequentes</h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>É muito básico para quem já trabalha na área? <span class="chev">⌄</span></summary>
+        <div class="faq__a">Não. O foco não é repetir o que você já aprendeu na faculdade. O foco é mostrar o raciocínio da análise, em uma empresa real, com um método que você consegue aplicar na sua carteira.</div>
+      </details>
+      <details>
+        <summary>Vou conseguir aplicar mesmo fechando muitas empresas? <span class="chev">⌄</span></summary>
+        <div class="faq__a">Sim. O método foi pensado justamente para a correria de escritório. Você aprende o passo a passo completo e ganha um checklist enxuto para fazer análises de 10–15 minutos por balancete, sem perfeccionismo.</div>
+      </details>
+      <details>
+        <summary>Por quanto tempo terei acesso? <span class="chev">⌄</span></summary>
+        <div class="faq__a">Você tem acesso ao conteúdo por tempo prolongado, podendo reassistir a aula e usar os materiais sempre que quiser.</div>
+      </details>
+      <details>
+        <summary>Preciso ser especialista em análise gerencial? <span class="chev">⌄</span></summary>
+        <div class="faq__a">Não. Basta ter base contábil e estar acostumada a fechar balancetes. O conteúdo foi feito para quem está entre o operacional e o gerencial.</div>
+      </details>
+      <details>
+        <summary>Como vou receber o acesso? <span class="chev">⌄</span></summary>
+        <div class="faq__a">Após a confirmação do pagamento, você recebe um e-mail com seu acesso à área de membros, onde encontrará a aula, o PDF e o checklist.</div>
+      </details>
+    </div>
+    <div class="faq__cta">
+      <a href="#checkout" class="cta cta--lg js-cta" data-cta="faq">Estou pronta para analisar balancetes com mais segurança.</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="brand">Balancete Sem Medo</div>
+    <p>Produto digital para contadoras. Conteúdo educacional — os resultados variam conforme a aplicação individual.</p>
+    <p>© <span id="year"></span> Balancete Sem Medo. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<!-- Sticky CTA mobile -->
+<div class="sticky-cta" id="stickyCta">
+  <a href="#checkout" class="cta js-cta" data-cta="sticky">Quero acessar por R$47</a>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     JS DA PÁGINA — rolagem suave, ano, sticky CTA
+     ═══════════════════════════════════════════════════════════════ -->
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Sticky CTA aparece após sair do hero
+  (function(){
+    var sticky = document.getElementById('stickyCta');
+    var hero = document.getElementById('hero');
+    if(!sticky || !hero || !('IntersectionObserver' in window)) return;
+    var io = new IntersectionObserver(function(entries){
+      sticky.classList.toggle('show', !entries[0].isIntersecting);
+    }, {threshold:0});
+    io.observe(hero);
+  })();
+</script>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     TRACKING — mesmo sistema da V2 (Pixel + CAPI Worker + UTM + external_id)
+     Mantém o rastreamento 100% consistente entre as páginas.
+     • Pixel ID e Worker idênticos aos da V2
+     • InitiateCheckout NÃO é disparado aqui (a Kiwify dispara)
+     ═══════════════════════════════════════════════════════════════ -->
+<script>
+// ─── CAPI WORKER ENDPOINT ───
+const BSM_WORKER = 'https://capi.aceleracaocontabil.com.br';
+
+// ─── external_id (com fallback Safari privado) ───
+function getExternalId(){
+  try{
+    let eid = sessionStorage.getItem('_bsm_eid');
+    if(!eid){ eid = 'u_' + Math.random().toString(36).substring(2) + Date.now(); sessionStorage.setItem('_bsm_eid', eid); }
+    return eid;
+  }catch(e){ return 'u_' + Math.random().toString(36).substring(2) + Date.now(); }
+}
+const BSM_EID = getExternalId();
+
+// ─── UTMs da URL → injeta nos links da Kiwify ───
+(function(){
+  const params = new URLSearchParams(window.location.search);
+  const keys = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid'];
+  const urlParams = {};
+  keys.forEach(k => { if(params.get(k)) urlParams[k] = params.get(k); });
+  urlParams['src'] = BSM_EID;
+  try{ sessionStorage.setItem('_bsm_source_url', window.location.href); }catch(e){}
+
+  const qs = new URLSearchParams(urlParams).toString();
+  function injectUtms(){
+    document.querySelectorAll('a[href*="pay.kiwify.com.br"]').forEach(function(link){
+      if(!link.dataset.utmInjected){
+        link.href = link.href + (link.href.includes('?') ? '&' : '?') + qs;
+        link.dataset.utmInjected = '1';
+      }
+    });
+  }
+  injectUtms();
+  const mo = new MutationObserver(injectUtms);
+  mo.observe(document.body, {childList:true, subtree:true});
+  setTimeout(() => mo.disconnect(), 10000);
+})();
+
+// ─── Helpers CAPI ───
+function bsmGetCookie(name){
+  const m = document.cookie.match(new RegExp('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)'));
+  return m ? m[2] : '';
+}
+function bsmGetFbc(){
+  const fbc = bsmGetCookie('_fbc');
+  if(fbc) return fbc;
+  const fbclid = new URLSearchParams(window.location.search).get('fbclid');
+  return fbclid ? 'fb.1.' + Date.now() + '.' + fbclid : '';
+}
+function bsmSendCAPI(eventName, customData, eventId){
+  fetch(BSM_WORKER, {
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({
+      event_name: eventName,
+      event_id: eventId,
+      event_source_url: window.location.href,
+      user_data:{
+        user_agent: navigator.userAgent,
+        fbc: bsmGetFbc() || undefined,
+        fbp: bsmGetCookie('_fbp') || undefined,
+        external_id: BSM_EID
+      },
+      custom_data: customData
+    })
+  }).catch(e => console.log('CAPI error:', e));
+}
+</script>
+
+<script>
+// ─── Meta Pixel lazy load (após 1ª interação ou 3.5s) ───
+let thirdPartyLoaded = false;
+function loadThirdPartyScripts(){
+  if(thirdPartyLoaded) return;
+  thirdPartyLoaded = true;
+
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+    (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+  fbq('init','1639582400367325');
+  fbq('track','PageView');
+
+  // ViewContent com eventID para deduplicação Pixel x CAPI
+  const vcId = 'vc_' + BSM_EID + '_' + Date.now();
+  fbq('track','ViewContent',{
+    content_ids:['bsm_principal'], content_name:'Balancete Sem Medo',
+    content_category:'produto_digital', content_type:'product',
+    value:47.00, currency:'BRL'
+  }, {eventID: vcId});
+
+  setTimeout(function(){
+    bsmSendCAPI('ViewContent',{
+      content_ids:['bsm_principal'], content_name:'Balancete Sem Medo',
+      content_type:'product', value:47.00, currency:'BRL'
+    }, vcId);
+  }, 800);
+}
+['scroll','mousemove','touchstart','click'].forEach(evt =>
+  window.addEventListener(evt, loadThirdPartyScripts, {once:true}));
+setTimeout(loadThirdPartyScripts, 3500);
+</script>
+
+<noscript>
+  <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1639582400367325&ev=PageView&noscript=1" />
+</noscript>
+
+</body>
+</html>
