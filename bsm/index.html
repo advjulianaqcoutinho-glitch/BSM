@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Abra qualquer balancete e, em até 10 minutos, saiba por onde começar, o que olhar e como explicar os números com segurança. Aula prática, método, checklist e garantia de 7 dias. Para contadoras operacionais." />
+<meta name="theme-color" content="#2A1810" />
+<title>Balancete Sem Medo · Analise qualquer balancete em 10 minutos</title>
+<link rel="icon" type="image/png" href="favicon.png" />
+
+<!-- Preconnect para o Worker de CAPI (acelera o 1º POST) -->
+<link rel="preconnect" href="https://capi.aceleracaocontabil.com.br" crossorigin>
+<link rel="dns-prefetch" href="https://connect.facebook.net">
+
+<!-- Fontes: preconnect + carregamento não-bloqueante -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap"></noscript>
+
+<style>
+/* ═══════════════ DESIGN TOKENS (V2) ═══════════════ */
+:root{
+  --c-cream:#FAF6F0;--c-beige:#EFE5D5;--c-beigeSoft:#F4EADA;--c-caramel:#B8794A;
+  --c-coffee:#3D2517;--c-coffeeDeep:#2A1810;--c-gold:#C39752;--c-ink:#1A1410;
+  --c-muted:#7A6555;--c-green:#5A7A3A;--c-greenDeep:#4a6b2c;
+  --font-display:"Instrument Serif","Cormorant Garamond",Georgia,serif;
+  --font-body:"Manrope","Helvetica Neue",sans-serif;
+  --radius:18px;--radius-sm:10px;--radius-lg:28px;--maxw:1200px;
+  --pad:clamp(20px,4vw,56px);
+  --shadow-soft:0 1px 2px rgba(58,36,18,.04),0 12px 30px -12px rgba(58,36,18,.12);
+  --shadow-card:0 1px 2px rgba(58,36,18,.05),0 28px 60px -24px rgba(58,36,18,.18);
+  --shadow-hard:0 2px 4px rgba(20,12,6,.08),0 40px 80px -30px rgba(20,12,6,.32);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body,html{margin:0;padding:0;background:var(--c-cream);color:var(--c-ink);
+  font-family:var(--font-body);font-size:16px;line-height:1.55;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer}
+.container{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad)}
+section{content-visibility:auto;contain-intrinsic-size:auto 600px}
+
+/* Tipografia */
+.h-display{font-family:var(--font-display);font-weight:400;font-size:clamp(36px,6.4vw,78px);
+  line-height:1.02;letter-spacing:-.01em;color:var(--c-coffeeDeep);margin:0 0 22px;text-wrap:balance}
+.h-display em{font-style:italic;color:var(--c-caramel);position:relative;white-space:nowrap}
+.h-display em::after{content:"";position:absolute;left:0;right:0;bottom:.06em;height:.42em;
+  background:rgba(195,151,82,.18);z-index:-1;border-radius:4px}
+.h-section{font-family:var(--font-display);font-weight:400;font-size:clamp(28px,4.4vw,52px);
+  line-height:1.08;letter-spacing:-.005em;color:var(--c-coffeeDeep);text-align:center;
+  margin:14px 0 36px;text-wrap:balance}
+.h-section em{font-style:italic;color:var(--c-caramel)}
+.h-card{font-family:var(--font-display);font-weight:400;font-size:clamp(20px,2.5vw,30px);
+  line-height:1.12;letter-spacing:-.005em;color:var(--c-coffeeDeep);margin:0 0 14px}
+.eyebrow{font-family:var(--font-body);font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--c-caramel);font-weight:600}
+.eyebrow--center{text-align:center;display:block;margin-bottom:10px}
+.eyebrow--gold{color:var(--c-gold)}
+.pill{display:inline-flex;align-items:center;gap:10px;padding:8px 14px;background:var(--c-beigeSoft);
+  border:1px solid color-mix(in oklab,var(--c-caramel) 25%,transparent);border-radius:999px;
+  font-size:11.5px;letter-spacing:.16em;font-weight:700;color:var(--c-coffee);margin-bottom:26px}
+
+/* ═══════════════ NAV ═══════════════ */
+.nav{position:sticky;top:0;z-index:30;background:color-mix(in oklab,var(--c-cream) 88%,transparent);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid color-mix(in oklab,var(--c-coffee) 7%,transparent)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav__brand{font-family:var(--font-display);font-size:22px;letter-spacing:-.005em;color:var(--c-coffeeDeep);line-height:1}
+.nav__brand em{font-style:italic;color:var(--c-caramel)}
+.nav__links{display:flex;gap:28px;font-size:14px;color:var(--c-coffee)}
+.nav__links a:hover{color:var(--c-caramel)}
+.nav__cta{font-size:12.5px;font-weight:700;letter-spacing:.06em;color:var(--c-coffee);
+  border:1px solid color-mix(in oklab,var(--c-coffee) 18%,transparent);padding:9px 14px;
+  border-radius:999px;transition:.2s;white-space:nowrap}
+.nav__cta:hover{background:var(--c-coffee);color:var(--c-cream)}
+@media (max-width:720px){.nav__links{display:none}.nav__cta{font-size:11px;padding:8px 12px}}
+
+/* ═══════════════ CTA ═══════════════ */
+.cta{display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:18px 26px;
+  border-radius:14px;border:none;font-weight:700;font-size:15px;letter-spacing:.06em;
+  transition:transform .18s ease,box-shadow .2s ease,background .2s;position:relative;
+  overflow:hidden;cursor:pointer;text-decoration:none;text-align:center;line-height:1.25}
+.cta--primary{background:linear-gradient(180deg,var(--c-caramel),#9a6038);color:#fffcf6;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.25),inset 0 -2px 0 rgba(42,24,16,.38),0 18px 36px -12px rgba(184,121,74,.6)}
+.cta--primary:hover{transform:translateY(-1px);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.3),inset 0 -2px 0 rgba(42,24,16,.5),0 22px 44px -14px rgba(184,121,74,.7)}
+.cta--primary:active{transform:translateY(0)}
+.cta--lg{padding:21px 34px;font-size:clamp(15px,1.7vw,17px)}
+.cta--block{width:100%}
+.cta--pulse::after{content:"";position:absolute;inset:0;border-radius:14px;
+  box-shadow:0 0 0 0 rgba(184,121,74,.5);animation:ctaPulse 2.6s infinite}
+@keyframes ctaPulse{0%{box-shadow:0 0 0 0 rgba(184,121,74,.45)}70%{box-shadow:0 0 0 16px rgba(184,121,74,0)}100%{box-shadow:0 0 0 0 rgba(184,121,74,0)}}
+.cta__shine{position:absolute;top:0;left:-120%;width:60%;height:100%;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,.35),transparent);
+  transform:skewX(-20deg);animation:shine 3.4s ease-in-out infinite}
+@keyframes shine{0%,60%{left:-120%}100%{left:160%}}
+.cta-note{font-size:13px;color:var(--c-muted);margin-top:14px;line-height:1.5}
+@media (max-width:640px){.cta--primary:not(.cta--sm){width:100%}}
+
+/* ═══════════════ HERO ═══════════════ */
+.hero{position:relative;padding:clamp(36px,6vw,80px) 0 clamp(60px,8vw,100px);overflow:hidden;content-visibility:visible}
+.hero::before{content:"";position:absolute;inset:0;
+  background-image:linear-gradient(rgba(61,37,23,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(61,37,23,.04) 1px,transparent 1px);
+  background-size:64px 64px;-webkit-mask-image:radial-gradient(ellipse at 30% 30%,#000 0%,transparent 65%);
+  mask-image:radial-gradient(ellipse at 30% 30%,#000 0%,transparent 65%);opacity:.6;pointer-events:none}
+.hero__grid{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;
+  gap:clamp(30px,5vw,64px);align-items:center}
+.hero__left{display:flex;flex-direction:column}
+.hero__sub{font-family:var(--font-body);font-weight:600;font-size:clamp(16px,1.7vw,20px);
+  color:var(--c-coffee);margin:0 0 18px;line-height:1.35}
+.hero__bullets{list-style:none;padding:0;margin:0 0 28px;display:grid;gap:12px}
+.hero__bullets li{display:flex;gap:12px;align-items:flex-start;font-size:15.5px;line-height:1.4;color:var(--c-coffee)}
+.hero__bullets b{font-weight:700;color:var(--c-coffeeDeep)}
+.hero__bdot{flex-shrink:0;width:26px;height:26px;display:grid;place-items:center;border-radius:999px;
+  background:rgba(90,122,58,.16);color:var(--c-greenDeep);margin-top:1px}
+.hero__priceAnchor{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:4px 0 22px;
+  padding:16px 20px;background:var(--c-beigeSoft);border:1px solid color-mix(in oklab,var(--c-caramel) 22%,transparent);
+  border-radius:var(--radius)}
+.hero__priceOld{font-size:15px;color:var(--c-muted);text-decoration:line-through}
+.hero__priceNow{font-family:var(--font-display);font-size:clamp(32px,5vw,46px);line-height:1;color:var(--c-coffeeDeep)}
+.hero__priceNow span{font-size:.5em;vertical-align:super;color:var(--c-caramel)}
+.hero__priceTag{font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;
+  color:var(--c-greenDeep);background:rgba(90,122,58,.14);padding:5px 10px;border-radius:999px}
+.hero__trust{display:flex;align-items:center;gap:10px;margin-top:14px;font-size:12.5px;color:var(--c-muted)}
+.hero__trust svg{color:var(--c-caramel);flex-shrink:0}
+.hero__social{display:inline-flex;align-items:center;gap:10px;margin-bottom:22px;
+  background:var(--c-cream);border:1px solid color-mix(in oklab,var(--c-caramel) 20%,transparent);
+  padding:8px 14px 8px 10px;border-radius:999px;box-shadow:var(--shadow-soft);width:fit-content}
+.hero__avatars{display:flex}
+.hero__avatars i{width:26px;height:26px;border-radius:50%;border:2px solid var(--c-cream);
+  margin-left:-9px;background:var(--c-caramel);display:grid;place-items:center;color:#fff;
+  font-size:10px;font-weight:700;font-style:normal}
+.hero__avatars i:first-child{margin-left:0}
+.hero__avatars i:nth-child(2){background:#9a6038}.hero__avatars i:nth-child(3){background:var(--c-gold)}
+.hero__avatars i:nth-child(4){background:var(--c-greenDeep)}
+.hero__socialTxt{font-size:12.5px;color:var(--c-coffee);line-height:1.2}
+.hero__socialTxt b{color:var(--c-coffeeDeep)}
+@media (max-width:980px){
+  .hero__grid{grid-template-columns:1fr}
+  .hero__right{order:-1;max-width:460px;margin:0 auto;width:100%}
+  .hero__left{align-items:center;text-align:center}
+  .h-display{text-align:center}
+  .hero__priceAnchor,.hero__social{margin-left:auto;margin-right:auto}
+  .hero__trust{justify-content:center}
+}
+
+/* Balancete mockup */
+.hero__right{display:flex;flex-direction:column;gap:14px}
+.hero__playerHead{align-self:flex-end;display:inline-flex;align-items:center;gap:10px;
+  background:var(--c-coffeeDeep);color:var(--c-cream);padding:9px 15px;border-radius:999px;
+  font-size:11px;font-weight:700;letter-spacing:.12em;box-shadow:var(--shadow-soft)}
+.hero__playerHead i{width:7px;height:7px;border-radius:50%;background:var(--c-gold);
+  box-shadow:0 0 0 3px rgba(195,151,82,.3);animation:blink 1.6s infinite}
+@keyframes blink{50%{opacity:.35}}
+.bal{position:relative;background:#fffdf8;border-radius:16px;overflow:hidden;
+  font-family:"JetBrains Mono","SF Mono",ui-monospace,monospace;font-size:11px;color:#2a1f14;
+  line-height:1.3;width:100%;box-shadow:var(--shadow-hard)}
+.bal__chrome{background:linear-gradient(180deg,#f4eedf,#e8dec5);border-bottom:1px solid #d9cba8;
+  display:flex;align-items:center;padding:7px 12px;gap:12px}
+.bal__dots{display:flex;gap:5px}
+.bal__dots span{width:9px;height:9px;border-radius:50%;background:#c8b896}
+.bal__dots span:first-child{background:#d97757}.bal__dots span:nth-child(2){background:#d8b454}.bal__dots span:nth-child(3){background:#7da45e}
+.bal__tab{font-family:var(--font-body);font-size:10.5px;letter-spacing:.06em;color:var(--c-coffee);font-weight:600}
+.bal__chrome-meta{margin-left:auto;font-family:var(--font-body);font-size:10px;color:var(--c-muted)}
+.bal__sheet{padding:4px 0;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.bal__head,.bal__row,.bal__total{display:grid;grid-template-columns:1.7fr .9fr .9fr;gap:6px;
+  padding:7px 16px;align-items:center;min-width:340px}
+.bal__head{font-family:var(--font-body);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--c-muted);font-weight:700;border-bottom:1px solid #e6dac0}
+.bal__row+.bal__row{border-top:1px dashed rgba(58,36,18,.08)}
+.bal__num{text-align:right;font-variant-numeric:tabular-nums}
+.bal__name{font-family:var(--font-body);font-size:11px}
+.bal__row--flag{background:linear-gradient(90deg,rgba(216,180,84,.28),rgba(216,180,84,.06));position:relative}
+.bal__row--flag .bal__name{font-weight:700}
+.bal__flag{display:inline-block;margin-left:6px;width:15px;height:15px;text-align:center;line-height:15px;
+  background:#d97757;color:#fff;border-radius:50%;font-family:var(--font-body);font-weight:700;font-size:9px}
+.bal__row--ok .bal__num:last-child{color:var(--c-greenDeep);font-weight:700}
+.bal__playerFoot{align-self:center;display:inline-flex;align-items:center;gap:8px;padding:10px 16px;
+  background:var(--c-beigeSoft);border-radius:999px;font-size:12.5px;color:var(--c-coffee);font-style:italic}
+.bal__playerFoot svg{color:var(--c-caramel)}
+
+/* ═══════════════ WHO (Para quem é) ═══════════════ */
+.who{background:var(--c-beige);padding:clamp(60px,8vw,110px) 0}
+.who__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:18px}
+@media (max-width:880px){.who__grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:480px){.who__grid{grid-template-columns:1fr;gap:16px}}
+.who__intro{text-align:center;max-width:680px;margin:-20px auto 8px;color:var(--c-muted);font-size:16px}
+.who__hint{text-align:center;font-weight:700;color:var(--c-coffeeDeep);margin:0 auto 30px;font-size:16px}
+.who__card{display:flex;align-items:flex-start;gap:14px;padding:24px 22px;background:var(--c-cream);
+  border-radius:var(--radius);border:1px solid color-mix(in oklab,var(--c-caramel) 18%,transparent);transition:.2s}
+.who__card:hover{transform:translateY(-2px);box-shadow:var(--shadow-soft)}
+.who__tick{flex-shrink:0;width:30px;height:30px;border-radius:50%;background:rgba(90,122,58,.18);
+  color:var(--c-greenDeep);display:grid;place-items:center;margin-top:1px}
+.who__card span{font-size:15px;color:var(--c-coffee);line-height:1.5}
+.who__card b{color:var(--c-coffeeDeep)}
+
+/* ═══════════════ PAIN (Dor real) ═══════════════ */
+.pain{background:var(--c-cream);padding:clamp(60px,8vw,110px) 0;position:relative}
+.pain__lead{text-align:center;max-width:680px;margin:-20px auto 38px;color:var(--c-muted);font-size:16px}
+.pain__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+@media (max-width:720px){.pain__grid{grid-template-columns:1fr}}
+.pain__card{position:relative;background:var(--c-beigeSoft);
+  border:1px solid color-mix(in oklab,var(--c-caramel) 14%,transparent);border-radius:var(--radius);
+  padding:30px 26px 26px;transition:.25s}
+.pain__card:hover{transform:translateY(-3px);box-shadow:var(--shadow-soft);border-color:rgba(184,121,74,.3)}
+.pain__card::before{content:"\201C";position:absolute;top:6px;left:18px;font-family:var(--font-display);
+  font-size:64px;color:var(--c-caramel);opacity:.25;line-height:1}
+.pain__card p{margin:0;padding-top:14px;font-family:var(--font-display);font-size:18px;font-style:italic;
+  line-height:1.5;color:var(--c-coffeeDeep);position:relative;z-index:1}
+.pain__punch{max-width:680px;margin:42px auto 0;text-align:center;font-family:var(--font-display);
+  font-size:clamp(22px,3.4vw,34px);line-height:1.3;color:var(--c-coffeeDeep)}
+.pain__punch em{font-style:italic;color:var(--c-caramel)}
+
+/* ═══════════════ LEARN (Promessa antes/depois) ═══════════════ */
+.learn{background:var(--c-beige);padding:clamp(60px,8vw,110px) 0}
+.learn__lead{text-align:center;max-width:680px;margin:-20px auto 40px;color:var(--c-muted);font-size:16px}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:960px;margin:0 auto}
+@media (max-width:760px){.ba{grid-template-columns:1fr}}
+.ba__col{border-radius:var(--radius-lg);padding:30px 28px}
+.ba__col--before{background:var(--c-cream);border:1px solid color-mix(in oklab,var(--c-coffee) 10%,transparent)}
+.ba__col--after{background:linear-gradient(180deg,var(--c-coffee),var(--c-coffeeDeep));color:var(--c-cream);box-shadow:var(--shadow-card)}
+.ba__tag{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.12em;
+  text-transform:uppercase;font-weight:700;margin-bottom:18px}
+.ba__col--before .ba__tag{color:var(--c-muted)}
+.ba__col--after .ba__tag{color:var(--c-gold)}
+.ba__list{list-style:none;padding:0;margin:0;display:grid;gap:14px}
+.ba__list li{display:flex;gap:11px;align-items:flex-start;font-size:15px;line-height:1.45}
+.ba__col--before li svg{color:#c0796a;flex-shrink:0;margin-top:2px}
+.ba__col--after li{color:rgba(250,246,240,.92)}
+.ba__col--after li svg{color:var(--c-gold);flex-shrink:0;margin-top:2px}
+/* Gráfico de tempo */
+.chart{max-width:760px;margin:40px auto 0;background:var(--c-cream);border-radius:var(--radius-lg);
+  padding:32px 30px;border:1px solid color-mix(in oklab,var(--c-caramel) 16%,transparent)}
+.chart__title{text-align:center;font-family:var(--font-display);font-size:22px;color:var(--c-coffeeDeep);margin:0 0 24px}
+.chart__row{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+.chart__lbl{width:130px;flex-shrink:0;font-size:13px;color:var(--c-coffee);font-weight:600}
+.chart__track{flex:1;height:34px;background:var(--c-beige);border-radius:8px;overflow:hidden;position:relative}
+.chart__bar{height:100%;border-radius:8px;width:0;transition:width 1.2s cubic-bezier(.4,1,.4,1);
+  display:flex;align-items:center;justify-content:flex-end;padding-right:12px;color:#fff;font-size:12.5px;font-weight:700}
+.chart__bar--before{background:linear-gradient(90deg,#c0796a,#a85d4d)}
+.chart__bar--after{background:linear-gradient(90deg,var(--c-green),var(--c-greenDeep))}
+.is-visible .chart__bar--before{width:92%}
+.is-visible .chart__bar--after{width:28%}
+.synth{max-width:740px;margin:44px auto 0;text-align:center;background:var(--c-beigeSoft);
+  border:1px solid color-mix(in oklab,var(--c-caramel) 25%,transparent);border-radius:var(--radius);
+  padding:28px 32px;font-family:var(--font-display);font-size:clamp(20px,2.8vw,28px);line-height:1.35;color:var(--c-coffeeDeep)}
+.synth em{color:var(--c-caramel);font-style:italic}
+
+/* ═══════════════ STACK (O que recebe) ═══════════════ */
+.stack{background:var(--c-cream);padding:clamp(60px,8vw,110px) 0}
+.stack__lead{text-align:center;max-width:640px;margin:-20px auto 40px;color:var(--c-muted);font-size:16px}
+.stack__grid{display:grid;gap:18px;max-width:880px;margin:0 auto}
+.deliv{display:grid;grid-template-columns:auto 1fr;gap:22px;background:var(--c-beigeSoft);
+  border:1px solid color-mix(in oklab,var(--c-caramel) 16%,transparent);border-radius:var(--radius-lg);
+  padding:28px 30px;transition:.2s}
+.deliv:hover{transform:translateY(-2px);box-shadow:var(--shadow-soft)}
+.deliv__num{width:48px;height:48px;border-radius:14px;background:var(--c-coffeeDeep);color:var(--c-cream);
+  font-family:var(--font-display);font-size:22px;display:grid;place-items:center;flex-shrink:0}
+.deliv__tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--c-caramel);margin-bottom:6px}
+.deliv p{margin:0 0 6px;color:var(--c-coffee);font-size:15px}
+.deliv ul{margin:10px 0 12px;padding:0;list-style:none;display:grid;gap:8px}
+.deliv ul li{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:var(--c-coffee)}
+.deliv ul li svg{flex-shrink:0;color:var(--c-greenDeep);margin-top:3px}
+.deliv__val{font-size:13.5px;font-style:italic;color:var(--c-greenDeep);margin-top:6px;
+  background:rgba(90,122,58,.12);border-radius:8px;padding:8px 12px;display:inline-block}
+.bonus-head{text-align:center;margin:54px auto 28px;max-width:620px}
+.deliv--bonus{border-style:dashed;border-color:color-mix(in oklab,var(--c-gold) 40%,transparent);
+  background:linear-gradient(180deg,var(--c-cream),var(--c-beigeSoft))}
+.deliv--bonus .deliv__num{background:var(--c-caramel)}
+.deliv--bonus .deliv__tag{color:#9a6038}
+.value-box{max-width:780px;margin:46px auto 0;text-align:center;
+  background:linear-gradient(180deg,var(--c-coffee),var(--c-coffeeDeep));color:var(--c-cream);
+  border-radius:var(--radius-lg);padding:38px 36px}
+.value-box p{margin:0 auto 8px;max-width:620px;color:rgba(250,246,240,.8);font-size:16px}
+.value-box .big{font-family:var(--font-display);font-size:clamp(24px,3.4vw,34px);color:var(--c-cream);margin-top:6px}
+.value-box .big em{color:var(--c-gold);font-style:italic}
+@media (max-width:600px){.deliv{grid-template-columns:1fr}.deliv__num{width:42px;height:42px}}
+
+/* ═══════════════ DIFERENCIAL (comparativo) ═══════════════ */
+.diff{background:var(--c-beige);padding:clamp(60px,8vw,110px) 0}
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:920px;margin:0 auto}
+@media (max-width:720px){.vs{grid-template-columns:1fr}}
+.vs__col{border-radius:var(--radius-lg);padding:30px 28px}
+.vs__col--old{background:var(--c-cream);border:1px solid color-mix(in oklab,var(--c-coffee) 10%,transparent)}
+.vs__col--new{background:linear-gradient(180deg,rgba(90,122,58,.12),var(--c-cream));border:1px solid rgba(90,122,58,.3)}
+.vs__col h3{font-family:var(--font-display);font-size:22px;margin:0 0 20px;display:flex;align-items:center;gap:10px;color:var(--c-coffeeDeep)}
+.vs__col ul{list-style:none;padding:0;margin:0;display:grid;gap:13px}
+.vs__col li{display:flex;gap:11px;align-items:flex-start;font-size:14.5px;line-height:1.45;color:var(--c-coffee)}
+.vs__col--old li svg{color:#c0796a;flex-shrink:0;margin-top:2px}
+.vs__col--new li svg{color:var(--c-greenDeep);flex-shrink:0;margin-top:2px}
+.vs__col li b{color:var(--c-coffeeDeep)}
+.diff__punch{max-width:680px;margin:46px auto 0;text-align:center;font-family:var(--font-display);
+  font-size:clamp(24px,3.6vw,38px);line-height:1.25;color:var(--c-coffeeDeep)}
+.diff__punch em{font-style:italic;color:var(--c-caramel)}
+
+/* ═══════════════ EXPERT ═══════════════ */
+.expert{background:linear-gradient(180deg,var(--c-coffeeDeep),var(--c-coffee));color:var(--c-cream);
+  padding:clamp(56px,8vw,100px) 0;position:relative;overflow:hidden}
+.expert::before{content:"";position:absolute;inset:0;
+  background:radial-gradient(ellipse at 20% 20%,rgba(195,151,82,.22),transparent 50%),radial-gradient(ellipse at 85% 100%,rgba(184,121,74,.3),transparent 55%);pointer-events:none}
+.expert__grid{position:relative;display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(28px,5vw,60px);align-items:center}
+@media (max-width:880px){.expert__grid{grid-template-columns:1fr;text-align:center}}
+.expert__photoWrap{position:relative;border-radius:var(--radius-lg);overflow:hidden;background:#221610;
+  box-shadow:var(--shadow-hard);aspect-ratio:3/4;max-width:380px;margin:0 auto}
+.expert__photoWrap img{width:100%;height:100%;object-fit:cover;object-position:center 25%}
+.expert__photoWrap::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(15,8,4,.8) 100%)}
+.expert__photoTag{position:absolute;left:22px;right:22px;bottom:20px;z-index:2;text-align:left}
+.expert__photoEyebrow{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--c-gold);font-weight:700}
+.expert__photoName{font-family:var(--font-display);font-size:34px;line-height:1;margin:4px 0 4px}
+.expert__photoRole{font-size:12.5px;color:rgba(250,246,240,.78)}
+.expert__body .h-section{color:var(--c-cream);text-align:left;margin-bottom:22px}
+.expert__body .h-section em{color:var(--c-gold)}
+@media (max-width:880px){.expert__body .h-section{text-align:center}}
+.expert__body p{color:rgba(250,246,240,.85);font-size:16px;line-height:1.65;margin:0 0 16px;max-width:560px}
+@media (max-width:880px){.expert__body p{margin-left:auto;margin-right:auto}}
+.expert__sign{font-family:var(--font-display);font-size:26px;color:var(--c-gold);margin-top:10px}
+
+/* ═══════════════ TESTIMONIALS ═══════════════ */
+.testimonials{background:var(--c-cream);padding:clamp(60px,8vw,110px) 0}
+.testimonials__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:18px}
+@media (max-width:880px){.testimonials__grid{grid-template-columns:1fr}}
+.tcard{background:var(--c-beigeSoft);border:1px solid color-mix(in oklab,var(--c-caramel) 15%,transparent);
+  border-radius:var(--radius);padding:32px 28px 28px;position:relative;box-shadow:var(--shadow-soft)}
+.tcard__stars{color:var(--c-gold);font-size:15px;letter-spacing:2px;margin-bottom:10px}
+.tcard p{font-family:var(--font-display);font-size:17px;font-style:italic;line-height:1.6;
+  color:var(--c-coffeeDeep);margin:0 0 22px}
+.tcard__author{display:flex;align-items:center;gap:12px;border-top:1px solid rgba(184,121,74,.18);padding-top:16px}
+.tcard__ava{width:42px;height:42px;border-radius:50%;background:var(--c-caramel);color:#fff;
+  display:grid;place-items:center;font-weight:700;font-size:15px;flex-shrink:0}
+.tcard__author strong{display:block;font-size:14px;color:var(--c-coffeeDeep);font-weight:700}
+.tcard__author span{font-size:12.5px;color:var(--c-muted)}
+
+/* ═══════════════ GUARANTEE ═══════════════ */
+.guarantee{background:var(--c-beige);padding:clamp(50px,7vw,90px) 0}
+.guarantee__inner{display:flex;align-items:center;gap:30px;max-width:820px;margin:0 auto;
+  background:var(--c-cream);border:1px solid color-mix(in oklab,var(--c-caramel) 22%,transparent);
+  border-radius:var(--radius-lg);padding:36px 38px;box-shadow:var(--shadow-soft)}
+@media (max-width:640px){.guarantee__inner{flex-direction:column;text-align:center;padding:30px 24px}}
+.guarantee__seal{flex-shrink:0;width:120px;height:120px;border-radius:50%;background:var(--c-beigeSoft);
+  border:2px dashed rgba(184,121,74,.5);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--c-caramel)}
+.guarantee__seal b{font-family:var(--font-display);font-size:30px;color:var(--c-coffeeDeep);line-height:1}
+.guarantee__seal span{font-size:10px;letter-spacing:.1em;text-transform:uppercase;margin-top:4px;color:var(--c-coffee)}
+.guarantee h3{font-family:var(--font-display);font-size:clamp(22px,3vw,28px);color:var(--c-coffeeDeep);margin:0 0 10px}
+.guarantee p{margin:0 0 10px;color:var(--c-coffee);font-size:15px;line-height:1.6}
+.guarantee ul{list-style:none;padding:0;margin:0 0 12px;display:grid;gap:8px}
+.guarantee li{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:var(--c-coffee)}
+.guarantee li svg{color:var(--c-greenDeep);flex-shrink:0;margin-top:3px}
+.guarantee b{color:var(--c-coffeeDeep)}
+@media (max-width:640px){.guarantee li{text-align:left}}
+
+/* ═══════════════ OFFER (Preço final) ═══════════════ */
+.offer{background:linear-gradient(180deg,var(--c-coffee),var(--c-coffeeDeep));color:var(--c-cream);
+  padding:clamp(56px,8vw,100px) 0;position:relative;overflow:hidden}
+.offer::before{content:"";position:absolute;inset:0;
+  background:radial-gradient(ellipse at 50% 0%,rgba(195,151,82,.25),transparent 55%);pointer-events:none}
+.offer__inner{position:relative;max-width:680px;margin:0 auto;text-align:center}
+.offer .h-section{color:var(--c-cream)}.offer .h-section em{color:var(--c-gold)}
+.offer__q{list-style:none;padding:0;margin:0 auto 30px;max-width:540px;text-align:left;display:grid;gap:11px}
+.offer__q li{display:flex;gap:12px;align-items:flex-start;font-size:15.5px;color:rgba(250,246,240,.88)}
+.offer__q li svg{color:var(--c-gold);flex-shrink:0;margin-top:3px}
+.offer__compare{font-size:15px;color:rgba(250,246,240,.8);margin-bottom:26px}
+.offer__compare b{color:var(--c-cream)}
+.offer__price{background:rgba(250,246,240,.06);border:1px solid color-mix(in oklab,var(--c-gold) 35%,transparent);
+  border-radius:var(--radius-lg);padding:30px 28px 32px;margin-bottom:24px}
+.offer__priceMeta{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:rgba(250,246,240,.7);margin-bottom:10px}
+.offer__priceRow{display:inline-flex;align-items:baseline;gap:4px}
+.offer__priceCurrency{font-size:26px;font-weight:600;align-self:flex-start;margin-top:18px;color:var(--c-gold)}
+.offer__priceBig{font-family:var(--font-display);font-size:clamp(76px,13vw,120px);line-height:1;color:var(--c-cream);letter-spacing:-.02em}
+.offer__priceFoot{margin-top:6px;font-size:13.5px;color:rgba(250,246,240,.7)}
+.offer__priceFoot b{color:var(--c-cream)}
+.offer__sub{font-size:13.5px;color:rgba(250,246,240,.7);margin-top:16px;max-width:440px;margin-left:auto;margin-right:auto}
+.offer__trust{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
+@media (max-width:560px){.offer__trust{grid-template-columns:1fr;text-align:left;max-width:280px;margin-left:auto;margin-right:auto}}
+.offer__trust div{display:flex;align-items:center;gap:10px;font-size:12.5px;color:rgba(250,246,240,.82);line-height:1.3}
+.offer__trust svg{color:var(--c-gold);flex-shrink:0}
+
+/* ═══════════════ FAQ ═══════════════ */
+.faq{background:var(--c-cream);padding:clamp(60px,8vw,110px) 0}
+.faq__list{max-width:760px;margin:0 auto;display:grid;gap:14px}
+.faq details{background:var(--c-beigeSoft);border:1px solid color-mix(in oklab,var(--c-caramel) 16%,transparent);
+  border-radius:var(--radius);overflow:hidden}
+.faq summary{list-style:none;cursor:pointer;padding:20px 24px;font-weight:700;font-size:16px;
+  color:var(--c-coffeeDeep);display:flex;align-items:center;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .chev{flex-shrink:0;width:26px;height:26px;border-radius:50%;background:var(--c-beige);
+  color:var(--c-caramel);display:grid;place-items:center;transition:transform .25s;font-size:14px}
+.faq details[open] summary .chev{transform:rotate(180deg)}
+.faq__a{padding:0 24px 22px;color:var(--c-coffee);font-size:15px;line-height:1.65}
+.faq__cta{text-align:center;margin-top:42px}
+
+/* ═══════════════ FOOTER ═══════════════ */
+.foot{background:var(--c-coffeeDeep);color:rgba(250,246,240,.7);padding:50px 0 24px;text-align:center}
+.foot__mark{font-family:var(--font-display);font-size:26px;color:var(--c-cream);margin-bottom:12px}
+.foot__mark em{color:var(--c-gold);font-style:italic}
+.foot p{margin:6px auto;max-width:620px;font-size:13px;line-height:1.6}
+.foot__base{margin-top:24px;padding-top:20px;border-top:1px solid rgba(250,246,240,.12);font-size:11.5px;color:rgba(250,246,240,.5)}
+
+/* ═══════════════ STICKY BAR ═══════════════ */
+.stickybar{position:fixed;left:0;right:0;bottom:0;background:var(--c-coffeeDeep);color:var(--c-cream);
+  z-index:40;transform:translateY(110%);transition:transform .35s cubic-bezier(.4,1,.4,1);
+  box-shadow:0 -20px 40px -10px rgba(0,0,0,.3)}
+.stickybar.is-visible{transform:translateY(0)}
+.stickybar__inner{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px var(--pad);max-width:var(--maxw);margin:0 auto}
+.stickybar__copy{display:flex;flex-direction:column;font-size:12.5px;line-height:1.3}
+.stickybar__copy b{color:var(--c-cream);font-weight:700}
+.stickybar__copy span{color:rgba(250,246,240,.7)}
+@media (max-width:480px){.stickybar__copy b{display:none}.stickybar .cta{flex:1}}
+
+/* ═══════════════ TOAST (prova social) ═══════════════ */
+.toast{position:fixed;left:20px;bottom:20px;z-index:35;display:flex;align-items:center;gap:12px;
+  background:var(--c-cream);border:1px solid color-mix(in oklab,var(--c-caramel) 22%,transparent);
+  border-radius:14px;padding:12px 16px 12px 12px;box-shadow:var(--shadow-card);max-width:320px;
+  transform:translateY(140%);opacity:0;transition:transform .45s cubic-bezier(.4,1,.4,1),opacity .45s}
+.toast.is-visible{transform:translateY(0);opacity:1}
+.toast__ava{width:40px;height:40px;border-radius:50%;background:var(--c-caramel);color:#fff;
+  display:grid;place-items:center;font-weight:700;font-size:15px;flex-shrink:0}
+.toast__txt{font-size:13px;color:var(--c-coffee);line-height:1.35}
+.toast__txt b{color:var(--c-coffeeDeep)}
+.toast__txt span{display:block;font-size:11px;color:var(--c-muted);margin-top:2px}
+.toast__check{color:var(--c-greenDeep);flex-shrink:0}
+@media (max-width:720px){.toast{display:none}}
+
+/* ═══════════════ SCROLL REVEAL ═══════════════ */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.is-visible{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  .cta--pulse::after,.cta__shine,.hero__playerHead i{animation:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════ NAV ═══════════════ -->
+<header class="nav">
+  <div class="container nav__inner">
+    <div class="nav__brand">Balancete <em>Sem Medo</em></div>
+    <nav class="nav__links">
+      <a href="#para-quem">Para quem é</a>
+      <a href="#conteudo">O que você recebe</a>
+      <a href="#garantia">Garantia</a>
+    </nav>
+    <a href="https://pay.kiwify.com.br/aHYebNd" class="nav__cta js-cta" data-cta="nav">Garantir por R$47</a>
+  </div>
+</header>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<section class="hero" id="hero">
+  <div class="container hero__grid">
+    <div class="hero__left">
+      <span class="pill">Produto digital · Para contadoras operacionais</span>
+
+      <div class="hero__social">
+        <span class="hero__avatars" aria-hidden="true"><i>M</i><i>A</i><i>C</i><i>R</i></span>
+        <span class="hero__socialTxt"><b><span id="counter" data-target="286">286</span> contadoras</b> já acessaram o método</span>
+      </div>
+
+      <h1 class="h-display">Abra qualquer balancete e, em até <em>10 minutos</em>, saiba por onde começar, o que olhar e como explicar os números.</h1>
+      <p class="hero__sub">Para contadoras que já fecham dezenas de empresas por mês, mas ainda sentem que só <em>conferem</em> números — em vez de realmente <strong>analisar</strong>.</p>
+
+      <ul class="hero__bullets">
+        <li><span class="hero__bdot">✓</span><span>Você já sabe montar balancete. Seu problema não é contabilidade — <b>é interpretação.</b></span></li>
+        <li><span class="hero__bdot">✓</span><span>Você não precisa de mais teoria. Precisa <b>ver uma análise real acontecendo.</b></span></li>
+        <li><span class="hero__bdot">✓</span><span>Uma aula prática com <b>método, checklist e garantia de 7 dias.</b></span></li>
+      </ul>
+
+      <div class="hero__priceAnchor">
+        <span class="hero__priceTag">Acesso imediato</span>
+        <span class="hero__priceNow"><span>R$</span>47</span>
+        <span class="hero__priceOld">ou 11x no cartão</span>
+      </div>
+
+      <a href="https://pay.kiwify.com.br/aHYebNd" class="cta cta--primary cta--lg cta--pulse js-cta" data-cta="hero">
+        <span class="cta__shine"></span>Quero acessar o Balancete Sem Medo por R$47
+      </a>
+      <p class="cta-note">Produto digital 100% online &nbsp;·&nbsp; Acesso imediato &nbsp;·&nbsp; Garantia incondicional de 7 dias</p>
+    </div>
+
+    <div class="hero__right">
+      <span class="hero__playerHead"><i></i> ANÁLISE AO VIVO</span>
+      <div class="bal">
+        <div class="bal__chrome">
+          <span class="bal__dots"><span></span><span></span><span></span></span>
+          <span class="bal__tab">Balancete · Empresa exemplo</span>
+          <span class="bal__chrome-meta">06/2026</span>
+        </div>
+        <div class="bal__sheet">
+          <div class="bal__head"><span>Conta</span><span class="bal__num">Anterior</span><span class="bal__num">Atual</span></div>
+          <div class="bal__row"><span class="bal__name">Caixa e equivalentes</span><span class="bal__num">18.400</span><span class="bal__num">12.100</span></div>
+          <div class="bal__row bal__row--flag"><span class="bal__name">Clientes a receber<span class="bal__flag">!</span></span><span class="bal__num">42.700</span><span class="bal__num">71.300</span></div>
+          <div class="bal__row"><span class="bal__name">Estoques</span><span class="bal__num">33.500</span><span class="bal__num">35.900</span></div>
+          <div class="bal__row bal__row--flag"><span class="bal__name">Fornecedores<span class="bal__flag">!</span></span><span class="bal__num">21.100</span><span class="bal__num">39.800</span></div>
+          <div class="bal__row bal__row--ok"><span class="bal__name">Receita líquida</span><span class="bal__num">88.200</span><span class="bal__num">94.500</span></div>
+        </div>
+      </div>
+      <span class="bal__playerFoot">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 2"/></svg>
+        2 alertas identificados em segundos
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ PARA QUEM É ═══════════════ -->
+<section class="who" id="para-quem">
+  <div class="container">
+    <span class="eyebrow eyebrow--center reveal">Para quem é</span>
+    <h2 class="h-section reveal">Para quem é o <em>Balancete Sem Medo</em>?</h2>
+    <p class="who__intro reveal">Este produto foi criado para um tipo muito específico de profissional: a contadora que já faz fechamento todo mês, mas ainda sente que sua análise do balancete é superficial.</p>
+    <p class="who__hint reveal">Se você se reconhece em 2 ou mais frases abaixo, este conteúdo é para você:</p>
+    <div class="who__grid">
+      <div class="who__card reveal"><span class="who__tick">✓</span><span>Você trabalha em <b>escritório de contabilidade</b> (pequeno ou médio) ou como contadora interna.</span></div>
+      <div class="who__card reveal"><span class="who__tick">✓</span><span>Fecha de <b>10 a 50 empresas por mês.</b></span></div>
+      <div class="who__card reveal"><span class="who__tick">✓</span><span>Já fez faculdade, talvez pós, cursos do CRC — mas na hora de <b>interpretar um balancete real</b> ainda sente insegurança.</span></div>
+      <div class="who__card reveal"><span class="who__tick">✓</span><span>Sente que <b>gasta mais tempo do que deveria</b> tentando entender o que os números dizem.</span></div>
+      <div class="who__card reveal"><span class="who__tick">✓</span><span>Tem <b>medo de deixar passar</b> alguma informação importante.</span></div>
+      <div class="who__card reveal"><span class="who__tick">✓</span><span>Gostaria de <b>entregar mais valor</b> para o cliente, mas não sabe por onde começar a análise.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ A DOR REAL ═══════════════ -->
+<section class="pain" id="dor">
+  <div class="container">
+    <span class="eyebrow eyebrow--center reveal">A dor real</span>
+    <h2 class="h-section reveal">A dor que quase nenhuma contadora admite… <em>mas muitas sentem.</em></h2>
+    <p class="pain__lead reveal">Na rotina, você recebe dezenas de balancetes. Confere saldos, cumpre obrigações, entrega relatórios. Mas quando olha para os números, sente que está apenas <em>checando</em> — não analisando de verdade.</p>
+    <div class="pain__grid">
+      <div class="pain__card reveal"><p>Será que eu estou olhando para o lugar certo?</p></div>
+      <div class="pain__card reveal"><p>Será que deixei passar alguma coisa importante?</p></div>
+      <div class="pain__card reveal"><p>Será que outro contador enxergaria algo que eu não vi?</p></div>
+      <div class="pain__card reveal"><p>Faço balancetes todo mês, mas sinto que ainda não sei transformar aqueles números em uma análise que gere valor.</p></div>
+    </div>
+    <p class="pain__punch reveal">A dor não é falta de conhecimento técnico.<br>É falta de <em>clareza, método e confiança</em> para interpretar.</p>
+  </div>
+</section>
+
+<!-- ═══════════════ PROMESSA (antes/depois) ═══════════════ -->
+<section class="learn" id="promessa">
+  <div class="container">
+    <span class="eyebrow eyebrow--center reveal">A transformação</span>
+    <h2 class="h-section reveal">O que o Balancete Sem Medo <em>faz por você?</em></h2>
+    <p class="learn__lead reveal">Não é mais um curso teórico de análise de balanço. É uma experiência prática que muda a forma como você olha para qualquer balancete.</p>
+    <div class="ba">
+      <div class="ba__col ba__col--before reveal">
+        <span class="ba__tag">Antes</span>
+        <ul class="ba__list">
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6M9 9l6 6"/></svg>Você analisa no automático.</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6M9 9l6 6"/></svg>Perde 20–40 minutos em cada balancete, com idas e vindas.</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6M9 9l6 6"/></svg>Termina pensando "acho que está certo…".</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6M9 9l6 6"/></svg>Evita se posicionar com segurança com chefe ou cliente.</li>
+        </ul>
+      </div>
+      <div class="ba__col ba__col--after reveal">
+        <span class="ba__tag">Depois</span>
+        <ul class="ba__list">
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Abre qualquer balancete e sabe exatamente por onde começar.</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Tem um roteiro simples em mente.</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Faz em 10–15 minutos a análise que antes levava quase uma hora.</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Explica o cenário do cliente com clareza e segurança.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="chart reveal">
+      <p class="chart__title">Tempo de análise por balancete</p>
+      <div class="chart__row">
+        <span class="chart__lbl">Hoje (no automático)</span>
+        <span class="chart__track"><span class="chart__bar chart__bar--before">20–40 min</span></span>
+      </div>
+      <div class="chart__row">
+        <span class="chart__lbl">Com o método</span>
+        <span class="chart__track"><span class="chart__bar chart__bar--after">10 min</span></span>
+      </div>
+    </div>
+
+    <p class="synth reveal">Em 1 hora de aula prática, você aprende um método que <em>muda seu próximo fechamento.</em></p>
+  </div>
+</section>
+
+<!-- ═══════════════ O QUE VOCÊ RECEBE ═══════════════ -->
+<section class="stack" id="conteudo">
+  <div class="container">
+    <span class="eyebrow eyebrow--center reveal">O que você recebe</span>
+    <h2 class="h-section reveal">Tudo o que entra no <em>Balancete Sem Medo</em></h2>
+    <p class="stack__lead reveal">Não é só conteúdo. É um conjunto de ferramentas para mudar sua rotina de fechamento.</p>
+
+    <div class="stack__grid">
+      <div class="deliv reveal">
+        <div class="deliv__num">1</div>
+        <div>
+          <span class="deliv__tag">Entregável principal</span>
+          <h3 class="h-card">Aula-Mestra Prática "Balancete Ao Vivo"</h3>
+          <p>Uma aula prática onde você acompanha uma análise real de balancete, do início ao fim. A Deise abre um balancete de verdade e mostra:</p>
+          <ul>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>onde começar;</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>quais contas observar primeiro;</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>como identificar padrões e riscos;</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>como interpretar o cenário financeiro da empresa;</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>como traduzir isso em linguagem simples para o cliente ou o chefe.</li>
+          </ul>
+          <p>É como se você estivesse sentada ao lado, vendo exatamente como pensar durante a análise.</p>
+          <span class="deliv__val">Conteúdo que você não encontra em cursos tradicionais. Aqui você vê a análise acontecendo.</span>
+        </div>
+      </div>
+
+      <div class="deliv reveal">
+        <div class="deliv__num">2</div>
+        <div>
+          <span class="deliv__tag">Guia em PDF</span>
+          <h3 class="h-card">"Mapa Mental do Balancete"</h3>
+          <p>Um guia que resume o método em um passo a passo visual. Para usar como "cola" na rotina:</p>
+          <ul>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Passo 1: onde começar;</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Passo 2: o que sempre merece atenção;</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Passo 3: como comparar com meses anteriores;</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Passo 4: como identificar alertas;</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Passo 5: como organizar a explicação para o cliente.</li>
+          </ul>
+          <p>Um mapa para você não se perder no meio dos números.</p>
+        </div>
+      </div>
+
+      <div class="deliv reveal">
+        <div class="deliv__num">3</div>
+        <div>
+          <span class="deliv__tag">Checklist operacional</span>
+          <h3 class="h-card">"Análise em 10 Minutos por Balancete"</h3>
+          <p>Um checklist para acompanhar qualquer análise, pensado para quem fecha dezenas de empresas:</p>
+          <ul>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>evita que você esqueça pontos importantes;</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>impede que você fique rodando em círculo;</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>ajuda a saber quando a análise está "boa o suficiente" e quando aprofundar.</li>
+          </ul>
+          <p>Leve, direto e prático.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="bonus-head reveal">
+      <span class="eyebrow eyebrow--center eyebrow--gold">Bônus</span>
+      <h3 class="h-section" style="margin-bottom:0">Bônus pensados para responder às suas <em>principais objeções</em></h3>
+    </div>
+
+    <div class="stack__grid">
+      <div class="deliv deliv--bonus reveal">
+        <div class="deliv__num">★</div>
+        <div>
+          <span class="deliv__tag">Bônus 1</span>
+          <h3 class="h-card">"Modo Fechamento Real"</h3>
+          <p>Mini conteúdo mostrando como aplicar o método na correria do fechamento, com muitas empresas:</p>
+          <ul>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>o que analisar profundamente;</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>o que só passar o olho;</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>como não ser perfeccionista em cada cliente.</li>
+          </ul>
+          <p>Para você ver que funciona mesmo com 30–50 empresas.</p>
+        </div>
+      </div>
+
+      <div class="deliv deliv--bonus reveal">
+        <div class="deliv__num">★</div>
+        <div>
+          <span class="deliv__tag">Bônus 2</span>
+          <h3 class="h-card">"Checklist Anti-Análise Superficial"</h3>
+          <p>Uma lista de perguntas que você responde com o balancete sem ser especialista em finanças:</p>
+          <ul>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>"Esse cliente está saudável financeiramente?"</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>"Onde está o principal problema deste mês?"</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>"Essa despesa fugiu do padrão?"</li>
+          </ul>
+          <p>Prova que sua análise vai além de "conferir número".</p>
+        </div>
+      </div>
+
+      <div class="deliv deliv--bonus reveal">
+        <div class="deliv__num">★</div>
+        <div>
+          <span class="deliv__tag">Bônus 3</span>
+          <h3 class="h-card">"Guia de Adaptação por Tipo de Cliente"</h3>
+          <p>Um mini guia para ajustar o olhar conforme o tipo de empresa:</p>
+          <ul>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>prestadores de serviço;</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>comércio;</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>pequenas indústrias.</li>
+          </ul>
+          <p>Para você se sentir segura com qualquer carteira.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="value-box reveal">
+      <p>Se você fosse contratar uma consultoria ou fazer múltiplos cursos para chegar neste nível de clareza, facilmente passaria de centenas de reais.</p>
+      <div class="big">Aqui, você tem tudo isso em um único produto, por <em>R$47</em>.</div>
+    </div>
+
+    <div class="faq__cta reveal">
+      <a href="https://pay.kiwify.com.br/aHYebNd" class="cta cta--primary cta--lg js-cta" data-cta="stack">Quero tudo isso por apenas R$47</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ DIFERENCIAL ═══════════════ -->
+<section class="diff" id="diferencial">
+  <div class="container">
+    <span class="eyebrow eyebrow--center reveal">Por que é diferente</span>
+    <h2 class="h-section reveal">Diferente de tudo que você <em>já viu</em></h2>
+    <div class="vs">
+      <div class="vs__col vs__col--old reveal">
+        <h3>O que você já tentou</h3>
+        <ul>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6M9 9l6 6"/></svg><span><b>Faculdade:</b> muita teoria, pouca prática.</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6M9 9l6 6"/></svg><span><b>Pós/MBA:</b> muitos conceitos, poucos casos reais.</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6M9 9l6 6"/></svg><span><b>Cursos do CRC:</b> foco em normas, não em interpretação.</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6M9 9l6 6"/></svg><span><b>Lives e vídeos:</b> dicas soltas, sem passo a passo.</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6M9 9l6 6"/></svg><span><b>Material técnico:</b> pesado, distante da rotina.</span></li>
+        </ul>
+      </div>
+      <div class="vs__col vs__col--new reveal">
+        <h3>O que você encontra aqui</h3>
+        <ul>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg>Uma análise real, do início ao fim.</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg>Um raciocínio sendo narrado, passo a passo.</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg>Um método que cabe na correria do escritório.</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg>Linguagem simples, sem excesso de termos técnicos.</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg>Ferramentas para aplicar na próxima semana de fechamento.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="diff__punch reveal">Você não precisa estudar mais.<br><em>Você precisa ver como analisar na prática.</em></p>
+  </div>
+</section>
+
+<!-- ═══════════════ EXPERT ═══════════════ -->
+<section class="expert" id="expert">
+  <div class="container expert__grid">
+    <div class="expert__photoWrap reveal">
+      <img src="foto-deise.jpg" alt="Deise Coutinho, contadora e mentora" width="380" height="507" loading="lazy" decoding="async" />
+      <div class="expert__photoTag">
+        <span class="expert__photoEyebrow">Sua mentora</span>
+        <div class="expert__photoName">Deise Coutinho</div>
+        <div class="expert__photoRole">Contadora · Mentora de contadoras</div>
+      </div>
+    </div>
+    <div class="expert__body reveal">
+      <span class="eyebrow eyebrow--gold">Quem vai te ensinar</span>
+      <h2 class="h-section">Você vai aprender com quem <em>vive a rotina contábil.</em></h2>
+      <p>A <strong>Deise Coutinho</strong> é contadora com anos de experiência na rotina de escritório e mentora de outras contadoras. Ao longo da carreira, percebeu um padrão: muitas profissionais sabiam montar o balancete — mas ainda se sentiam inseguras na hora de interpretar os números.</p>
+      <p>Por isso desenvolveu um método prático, baseado na realidade do escritório, para ajudar contadoras a analisarem com mais clareza e confiança. Nada de teoria excessiva ou exemplos distantes.</p>
+      <p>Neste treinamento, ela mostra <strong>exatamente como analisa um balancete real</strong>, narrando seu raciocínio passo a passo — para você aplicar no seu dia a dia.</p>
+      <div class="expert__sign">Deise Coutinho</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ DEPOIMENTOS ═══════════════ -->
+<section class="testimonials" id="depoimentos">
+  <div class="container">
+    <span class="eyebrow eyebrow--center reveal">Quem já aplicou</span>
+    <h2 class="h-section reveal">O que as contadoras estão <em>dizendo</em></h2>
+    <div class="testimonials__grid">
+      <div class="tcard reveal">
+        <div class="tcard__stars">★★★★★</div>
+        <p>"Eu fechava no automático e vivia insegura. Depois da aula, montei meu checklist e hoje consigo explicar pro cliente o que cada número significa. Mudou minha postura."</p>
+        <div class="tcard__author"><span class="tcard__ava">MA</span><div><strong>Mariana A.</strong><span>Contadora · escritório próprio</span></div></div>
+      </div>
+      <div class="tcard reveal">
+        <div class="tcard__stars">★★★★★</div>
+        <p>"O melhor é ver a análise acontecendo de verdade. Não é teoria. Apliquei o método no mesmo dia em 3 balancetes e economizei um tempo absurdo no fechamento."</p>
+        <div class="tcard__author"><span class="tcard__ava">CR</span><div><strong>Carla R.</strong><span>Contadora interna</span></div></div>
+      </div>
+      <div class="tcard reveal">
+        <div class="tcard__stars">★★★★★</div>
+        <p>"Por R$47 eu não esperava tanto. O mapa mental e o checklist viraram minha cola de todo mês. Finalmente parei de sentir que só conferia número."</p>
+        <div class="tcard__author"><span class="tcard__ava">PS</span><div><strong>Patrícia S.</strong><span>Sócia de escritório contábil</span></div></div>
+      </div>
+    </div>
+    <p class="who__intro reveal" style="margin-top:30px;font-size:13px;font-style:italic">Depoimentos ilustrativos de perfis de clientes. Os resultados variam conforme a aplicação individual.</p>
+  </div>
+</section>
+
+<!-- ═══════════════ GARANTIA ═══════════════ -->
+<section class="guarantee" id="garantia">
+  <div class="container">
+    <div class="guarantee__inner reveal">
+      <div class="guarantee__seal">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+        <b>7</b><span>dias</span>
+      </div>
+      <div>
+        <h3>Garantia Fechamento Sem Medo</h3>
+        <p>Você talvez esteja pensando: "E se for mais um curso que eu compro e não muda nada?". Por isso, a decisão é simples. Assista à aula e use o checklist em <b>pelo menos 1 balancete real</b> do seu escritório. Se você não sentir:</p>
+        <ul>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg>mais clareza na análise,</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg>mais agilidade,</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg>menos "acho que está certo" e mais "tenho certeza do que estou vendo",</li>
+        </ul>
+        <p>basta enviar um e-mail em até <b>7 dias</b> e devolvemos <b>100% do seu dinheiro</b>. Sem perguntas, sem burocracia. Ou você sai com um método que muda seu próximo fechamento, ou não paga nada por tentar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ OFERTA / PREÇO ═══════════════ -->
+<section class="offer" id="oferta">
+  <div class="container offer__inner">
+    <span class="eyebrow eyebrow--center eyebrow--gold reveal">Investimento</span>
+    <h2 class="h-section reveal">O quanto vale acabar com a sensação de que você só <em>"confere números"?</em></h2>
+    <ul class="offer__q reveal">
+      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>Quantos balancetes você analisa por mês?</li>
+      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>Quantas horas a mais você gasta sem um roteiro claro?</li>
+      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>Quantas vezes você evita dar uma opinião por insegurança?</li>
+      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>Quantas oportunidades de se posicionar você deixa passar?</li>
+    </ul>
+    <p class="offer__compare reveal">Agora compare tudo isso com o investimento único de <b>R$47</b>.</p>
+
+    <div class="offer__price reveal">
+      <div class="offer__priceMeta">Acesso completo · pagamento único</div>
+      <div class="offer__priceRow">
+        <span class="offer__priceCurrency">R$</span>
+        <span class="offer__priceBig">47</span>
+      </div>
+      <div class="offer__priceFoot">à vista ou em até <b>11x</b> via plataforma de pagamento</div>
+      <p class="offer__sub">Produto digital. Você recebe acesso imediato ao conteúdo e pode assistir quantas vezes quiser.</p>
+    </div>
+
+    <a href="https://pay.kiwify.com.br/aHYebNd" class="cta cta--primary cta--lg cta--pulse cta--block js-cta" data-cta="oferta">
+      <span class="cta__shine"></span>Quero acessar o Balancete Sem Medo por R$47
+    </a>
+
+    <div class="offer__trust reveal">
+      <div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg><span>Garantia de 7 dias</span></div>
+      <div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><span>Pagamento seguro</span></div>
+      <div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></svg><span>Acesso imediato</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FAQ ═══════════════ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <span class="eyebrow eyebrow--center reveal">Dúvidas</span>
+    <h2 class="h-section reveal">Perguntas <em>frequentes</em></h2>
+    <div class="faq__list">
+      <details class="reveal"><summary>É muito básico para quem já trabalha na área?<span class="chev">⌄</span></summary><div class="faq__a">Não. O foco não é repetir o que você aprendeu na faculdade. É mostrar o raciocínio da análise, em uma empresa real, com um método que você aplica na sua carteira.</div></details>
+      <details class="reveal"><summary>Vou conseguir aplicar mesmo fechando muitas empresas?<span class="chev">⌄</span></summary><div class="faq__a">Sim. O método foi pensado justamente para a correria de escritório. Você aprende o passo a passo completo e ganha um checklist enxuto para análises de 10–15 minutos por balancete, sem perfeccionismo.</div></details>
+      <details class="reveal"><summary>Por quanto tempo terei acesso?<span class="chev">⌄</span></summary><div class="faq__a">Você tem acesso ao conteúdo por tempo prolongado, podendo reassistir à aula e usar os materiais sempre que quiser.</div></details>
+      <details class="reveal"><summary>Preciso ser especialista em análise gerencial?<span class="chev">⌄</span></summary><div class="faq__a">Não. Basta ter base contábil e estar acostumada a fechar balancetes. O conteúdo foi feito para quem está entre o operacional e o gerencial.</div></details>
+      <details class="reveal"><summary>Como vou receber o acesso?<span class="chev">⌄</span></summary><div class="faq__a">Após a confirmação do pagamento, você recebe um e-mail com seu acesso à área de membros, onde encontra a aula, o PDF e o checklist.</div></details>
+    </div>
+    <div class="faq__cta reveal">
+      <a href="https://pay.kiwify.com.br/aHYebNd" class="cta cta--primary cta--lg js-cta" data-cta="faq">Estou pronta para analisar balancetes com segurança</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer class="foot">
+  <div class="container">
+    <div class="foot__mark">Balancete <em>Sem Medo</em></div>
+    <p>Produto digital para contadoras. Conteúdo educacional — os resultados variam conforme a aplicação individual.</p>
+    <p class="foot__base">© <span id="year"></span> Balancete Sem Medo · Aceleração Contábil. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<!-- ═══════════════ STICKY BAR ═══════════════ -->
+<div class="stickybar" id="stickybar">
+  <div class="stickybar__inner">
+    <div class="stickybar__copy">
+      <b>Balancete Sem Medo</b>
+      <span>Acesso imediato · Garantia de 7 dias · R$47</span>
+    </div>
+    <a href="https://pay.kiwify.com.br/aHYebNd" class="cta cta--primary cta--sm js-cta" data-cta="sticky">Quero por R$47</a>
+  </div>
+</div>
+
+<!-- ═══════════════ TOAST (prova social) ═══════════════ -->
+<div class="toast" id="toast" role="status" aria-live="polite">
+  <span class="toast__ava" id="toastAva">M</span>
+  <div class="toast__txt" id="toastTxt"></div>
+  <svg class="toast__check" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+</div>
+
+<!-- ═══════════════ JS DA PÁGINA ═══════════════ -->
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// ── Scroll reveal + chart trigger ──
+(function(){
+  var els = document.querySelectorAll('.reveal, .chart');
+  if(!('IntersectionObserver' in window)){ els.forEach(function(e){e.classList.add('is-visible')}); return; }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target); }
+    });
+  }, {threshold:.12});
+  els.forEach(function(e){ io.observe(e); });
+})();
+
+// ── Contador animado (286) ──
+(function(){
+  var el = document.getElementById('counter');
+  if(!el || !('IntersectionObserver' in window)) return;
+  var target = parseInt(el.dataset.target,10), done=false;
+  var io = new IntersectionObserver(function(entries){
+    if(entries[0].isIntersecting && !done){
+      done=true;
+      var start=0, dur=1400, t0=performance.now();
+      (function tick(now){
+        var p=Math.min((now-t0)/dur,1);
+        el.textContent = Math.floor((1-Math.pow(1-p,3))*target);
+        if(p<1) requestAnimationFrame(tick); else el.textContent=target;
+      })(t0);
+      io.disconnect();
+    }
+  }, {threshold:.5});
+  io.observe(el);
+})();
+
+// ── Sticky bar (aparece após o hero) ──
+(function(){
+  var bar=document.getElementById('stickybar'), hero=document.getElementById('hero');
+  if(!bar||!hero||!('IntersectionObserver' in window)) return;
+  var io=new IntersectionObserver(function(entries){
+    bar.classList.toggle('is-visible', !entries[0].isIntersecting);
+  }, {threshold:0});
+  io.observe(hero);
+})();
+
+// ── Toast de prova social ──
+(function(){
+  var names=['Mariana C.','Patrícia S.','Camila R.','Fernanda L.','Juliana M.','Aline P.','Bruna T.',
+    'Carla M.','Renata G.','Vanessa A.','Letícia F.','Daniela S.','Tatiane O.','Priscila R.','Simone B.'];
+  var cities=['São Paulo','Belo Horizonte','Curitiba','Porto Alegre','Rio de Janeiro','Goiânia',
+    'Florianópolis','Campinas','Fortaleza','Salvador','Brasília','Recife','Joinville','Ribeirão Preto'];
+  var actions=['acabou de acessar o','garantiu acesso ao','começou o'];
+  var toast=document.getElementById('toast'), ava=document.getElementById('toastAva'), txt=document.getElementById('toastTxt');
+  if(!toast) return;
+  function rand(a){return a[Math.floor(Math.random()*a.length)];}
+  function show(){
+    var n=rand(names), c=rand(cities), a=rand(actions);
+    ava.textContent=n[0];
+    txt.innerHTML='<b>'+n+'</b> de '+c+' '+a+' Balancete Sem Medo<span>há poucos minutos</span>';
+    toast.classList.add('is-visible');
+    setTimeout(function(){toast.classList.remove('is-visible');}, 5200);
+    setTimeout(show, 25000+Math.random()*20000);
+  }
+  setTimeout(show, 8000);
+})();
+</script>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     TRACKING — Pixel + CAPI Worker + UTM + external_id + scroll depth
+     Domínio esperado: aceleracaocontabil.com.br (CORS já liberado no Worker)
+     ═══════════════════════════════════════════════════════════════ -->
+<script>
+const BSM_WORKER = 'https://capi.aceleracaocontabil.com.br';
+
+// ── external_id persistente (localStorage 90d + fallback) ──
+function getExternalId(){
+  try{
+    var eid = localStorage.getItem('_bsm_eid');
+    if(!eid){ eid='u_'+Math.random().toString(36).substring(2)+Date.now(); localStorage.setItem('_bsm_eid',eid); }
+    return eid;
+  }catch(e){
+    try{
+      var s=sessionStorage.getItem('_bsm_eid');
+      if(!s){ s='u_'+Math.random().toString(36).substring(2)+Date.now(); sessionStorage.setItem('_bsm_eid',s); }
+      return s;
+    }catch(e2){ return 'u_'+Math.random().toString(36).substring(2)+Date.now(); }
+  }
+}
+const BSM_EID = getExternalId();
+
+// ── fbclid → guarda em localStorage por 7 dias (mantém atribuição) ──
+(function(){
+  try{
+    var fbclid = new URLSearchParams(window.location.search).get('fbclid');
+    if(fbclid){
+      localStorage.setItem('_bsm_fbclid', JSON.stringify({v:fbclid, t:Date.now()}));
+    }
+  }catch(e){}
+})();
+
+function bsmGetCookie(name){
+  var m=document.cookie.match(new RegExp('(^|;)\\s*'+name+'\\s*=\\s*([^;]+)'));
+  return m?m[2]:'';
+}
+function bsmGetFbc(){
+  var fbc=bsmGetCookie('_fbc');
+  if(fbc) return fbc;
+  var fbclid=new URLSearchParams(window.location.search).get('fbclid');
+  if(!fbclid){
+    try{
+      var stored=JSON.parse(localStorage.getItem('_bsm_fbclid')||'null');
+      if(stored && (Date.now()-stored.t)<7*24*60*60*1000) fbclid=stored.v;
+    }catch(e){}
+  }
+  return fbclid ? 'fb.1.'+Date.now()+'.'+fbclid : '';
+}
+
+// ── UTMs → injeta nos links da Kiwify ──
+(function(){
+  var params=new URLSearchParams(window.location.search);
+  var keys=['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid'];
+  var urlParams={};
+  keys.forEach(function(k){ if(params.get(k)) urlParams[k]=params.get(k); });
+  urlParams['src']=BSM_EID;
+  try{ sessionStorage.setItem('_bsm_source_url', window.location.href); }catch(e){}
+  var qs=new URLSearchParams(urlParams).toString();
+  function inject(){
+    document.querySelectorAll('a[href*="pay.kiwify.com.br"]').forEach(function(link){
+      if(!link.dataset.utmInjected){
+        link.href=link.href+(link.href.includes('?')?'&':'?')+qs;
+        link.dataset.utmInjected='1';
+      }
+    });
+  }
+  inject();
+  var mo=new MutationObserver(inject);
+  mo.observe(document.body,{childList:true,subtree:true});
+  setTimeout(function(){mo.disconnect();},10000);
+})();
+
+function bsmSendCAPI(eventName, customData, eventId){
+  fetch(BSM_WORKER,{
+    method:'POST', headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({
+      event_name:eventName, event_id:eventId, event_source_url:window.location.href,
+      user_data:{ user_agent:navigator.userAgent, fbc:bsmGetFbc()||undefined,
+        fbp:bsmGetCookie('_fbp')||undefined, external_id:BSM_EID },
+      custom_data:customData
+    })
+  }).catch(function(e){console.log('CAPI error:',e);});
+}
+</script>
+
+<script>
+// ── Meta Pixel lazy load (após 1ª interação ou 3.5s) ──
+var thirdPartyLoaded=false;
+function loadThirdPartyScripts(){
+  if(thirdPartyLoaded) return;
+  thirdPartyLoaded=true;
+
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+    (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+  fbq('init','1639582400367325');
+  fbq('track','PageView');
+
+  var vcId='vc_'+BSM_EID+'_'+Date.now();
+  fbq('track','ViewContent',{content_ids:['bsm_principal'],content_name:'Balancete Sem Medo',
+    content_category:'produto_digital',content_type:'product',value:47.00,currency:'BRL'},{eventID:vcId});
+
+  setTimeout(function(){
+    bsmSendCAPI('ViewContent',{content_ids:['bsm_principal'],content_name:'Balancete Sem Medo',
+      content_type:'product',value:47.00,currency:'BRL'}, vcId);
+  },800);
+
+  initScrollDepth();
+  initCtaTracking();
+}
+['scroll','mousemove','touchstart','click'].forEach(function(evt){
+  window.addEventListener(evt, loadThirdPartyScripts, {once:true});
+});
+setTimeout(loadThirdPartyScripts, 3500);
+
+// ── Scroll depth → evento de engajamento (Pixel custom + CAPI) ──
+function initScrollDepth(){
+  var marks=[25,50,75,90], fired={};
+  function onScroll(){
+    var h=document.documentElement, st=h.scrollTop||document.body.scrollTop;
+    var pct=(st/((h.scrollHeight||document.body.scrollHeight)-h.clientHeight))*100;
+    marks.forEach(function(m){
+      if(pct>=m && !fired[m]){
+        fired[m]=true;
+        var id='scroll_'+m+'_'+BSM_EID+'_'+Date.now();
+        if(window.fbq) fbq('trackCustom','ScrollDepth',{percent:m},{eventID:id});
+        bsmSendCAPI('ScrollDepth',{percent:m,content_name:'Balancete Sem Medo'}, id);
+      }
+    });
+    if(Object.keys(fired).length===marks.length) window.removeEventListener('scroll',onScroll);
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+}
+
+// ── Clique no CTA → sinal de intenção (antes do checkout Kiwify) ──
+function initCtaTracking(){
+  document.querySelectorAll('.js-cta').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var id='ctaclick_'+BSM_EID+'_'+Date.now();
+      var loc=btn.dataset.cta||'desconhecido';
+      if(window.fbq) fbq('trackCustom','CTAClick',{location:loc},{eventID:id});
+      bsmSendCAPI('CTAClick',{location:loc,content_name:'Balancete Sem Medo',value:47.00,currency:'BRL'}, id);
+    }, {passive:true});
+  });
+}
+</script>
+
+<noscript>
+  <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1639582400367325&ev=PageView&noscript=1" />
+</noscript>
+
+</body>
+</html>
