@@ -1018,14 +1018,29 @@ function initScrollDepth(){
   onScroll();
 }
 
-// ── Clique no CTA → sinal de intenção (antes do checkout Kiwify) ──
+// ── Clique no CTA → InitiateCheckout (Pixel + CAPI, deduplicado) ──
 function initCtaTracking(){
   document.querySelectorAll('.js-cta').forEach(function(btn){
     btn.addEventListener('click', function(){
-      var id='ctaclick_'+BSM_EID+'_'+Date.now();
+      var id='ic_'+BSM_EID+'_'+Date.now();
       var loc=btn.dataset.cta||'desconhecido';
-      if(window.fbq) fbq('trackCustom','CTAClick',{location:loc},{eventID:id});
-      bsmSendCAPI('CTAClick',{location:loc,content_name:'Balancete Sem Medo',value:47.00,currency:'BRL'}, id);
+      if(window.fbq) fbq('track','InitiateCheckout',{
+        content_ids:['bsm_principal'],
+        content_name:'Balancete Sem Medo',
+        content_type:'product',
+        value:47.00,
+        currency:'BRL',
+        num_items:1
+      },{eventID:id});
+      bsmSendCAPI('InitiateCheckout',{
+        content_ids:['bsm_principal'],
+        content_name:'Balancete Sem Medo',
+        content_type:'product',
+        value:47.00,
+        currency:'BRL',
+        num_items:1,
+        location:loc
+      }, id);
     }, {passive:true});
   });
 }
