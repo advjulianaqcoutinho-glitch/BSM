@@ -107,9 +107,9 @@ section{content-visibility:auto;contain-intrinsic-size:auto 600px}
   background-image:linear-gradient(rgba(61,37,23,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(61,37,23,.04) 1px,transparent 1px);
   background-size:64px 64px;-webkit-mask-image:radial-gradient(ellipse at 30% 30%,#000 0%,transparent 65%);
   mask-image:radial-gradient(ellipse at 30% 30%,#000 0%,transparent 65%);opacity:.6;pointer-events:none}
-.hero__grid{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;
+.hero__grid{position:relative;z-index:1;display:grid;grid-template-columns:1fr;
   gap:clamp(30px,5vw,64px);align-items:center}
-.hero__left{display:flex;flex-direction:column}
+.hero__left{display:flex;flex-direction:column;max-width:780px;margin:0 auto}
 .hero__sub{font-family:var(--font-body);font-weight:600;font-size:clamp(16px,1.7vw,20px);
   color:var(--c-coffee);margin:0 0 18px;line-height:1.35}
 .hero__bullets{list-style:none;padding:0;margin:0 0 28px;display:grid;gap:12px}
@@ -474,40 +474,12 @@ section{content-visibility:auto;contain-intrinsic-size:auto 600px}
         <li><span class="hero__bdot">✓</span><span>Uma aula prática com <b>método, checklist e garantia de 7 dias.</b></span></li>
       </ul>
 
-      <div class="hero__priceAnchor">
-        <span class="hero__priceTag">Acesso imediato</span>
-        <span class="hero__priceNow"><span>R$</span>47</span>
-        <span class="hero__priceOld">ou 11x no cartão</span>
-      </div>
-
       <a href="https://pay.kiwify.com.br/aHYebNd" class="cta cta--primary cta--lg cta--pulse js-cta" data-cta="hero">
         <span class="cta__shine"></span>Quero acessar o Balancete Sem Medo por R$47
       </a>
       <p class="cta-note">Produto digital 100% online &nbsp;·&nbsp; Acesso imediato &nbsp;·&nbsp; Garantia incondicional de 7 dias</p>
     </div>
 
-    <div class="hero__right">
-      <span class="hero__playerHead"><i></i> ANÁLISE AO VIVO</span>
-      <div class="bal">
-        <div class="bal__chrome">
-          <span class="bal__dots"><span></span><span></span><span></span></span>
-          <span class="bal__tab">Balancete · Empresa exemplo</span>
-          <span class="bal__chrome-meta">06/2026</span>
-        </div>
-        <div class="bal__sheet">
-          <div class="bal__head"><span>Conta</span><span class="bal__num">Anterior</span><span class="bal__num">Atual</span></div>
-          <div class="bal__row"><span class="bal__name">Caixa e equivalentes</span><span class="bal__num">18.400</span><span class="bal__num">12.100</span></div>
-          <div class="bal__row bal__row--flag"><span class="bal__name">Clientes a receber<span class="bal__flag">!</span></span><span class="bal__num">42.700</span><span class="bal__num">71.300</span></div>
-          <div class="bal__row"><span class="bal__name">Estoques</span><span class="bal__num">33.500</span><span class="bal__num">35.900</span></div>
-          <div class="bal__row bal__row--flag"><span class="bal__name">Fornecedores<span class="bal__flag">!</span></span><span class="bal__num">21.100</span><span class="bal__num">39.800</span></div>
-          <div class="bal__row bal__row--ok"><span class="bal__name">Receita líquida</span><span class="bal__num">88.200</span><span class="bal__num">94.500</span></div>
-        </div>
-      </div>
-      <span class="bal__playerFoot">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 2"/></svg>
-        2 alertas identificados em segundos
-      </span>
-    </div>
   </div>
 </section>
 
